@@ -1,0 +1,92 @@
+{
+    "camera": {
+        "type": "perspective",
+        "focal_length": 1,
+        "eye": [ 0,0,0 ],
+        "look": [ 0,0,-1 ],
+        "up": [ 0,1,0 ],
+        "film_left": -1,
+        "film_right": 1,
+        "film_bottom": -1,
+        "film_top": 1
+    },
+    
+    "materials": [
+        {
+            "name": "default",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 1,1,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        }
+    ],
+    
+    "lights": [
+        {
+            "position": [ 0,0,0,1 ],
+            "color": [ 1,1,1 ],
+            "color_ambient": [ 1,1,1 ]
+        }
+    ],
+    
+    "transforms": [
+        {
+            "name": "identity",
+            "matrix": [ [ 1,0,0,0 ], [ 0,1,0,0 ], [ 0,0,1,0 ], [ 0,0,0,1 ] ]
+        },
+        {
+            "name": "R",
+            "rotate": { "degrees": -45, "axis": [ 1,0,0 ] }
+        },
+        {
+            "name": "T",
+            "translate": [ 0,-1,0 ]
+        },
+        {
+            "name": "S",
+            "scale": [ 0.1, 1.0, 0.1 ]
+        }
+    ],
+    
+    "shapes": [
+        {
+            "type": "sphere",
+            "transform": "identity",
+            "material": "default"
+        },
+        {
+            "type": "plane",
+            "transform": "identity",
+            "material": "default"
+        },
+        {
+            "type": "cylinder",
+            "transform": "identity",
+            "material": "default"
+        },
+        {
+            "type": "cone",
+            "transform": "identity",
+            "material": "default"
+        },
+        {
+            "type": "cube",
+            "transform": "identity",
+            "material": "default"
+        },
+        {
+            "type": "mesh",
+            "transform": "identity",
+            "material": "default",
+            "path": ""
+        }
+    ]
+}

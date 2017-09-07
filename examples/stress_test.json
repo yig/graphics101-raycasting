@@ -1,0 +1,550 @@
+{
+    "camera": {
+        "type": "perspective",
+        "focal_length": 0.3,
+        "eye": [ 0,2,4 ],
+        "look": [ 0, -0.44721359549995793, -0.89442719099991586],
+        "up": [0, 0.89442719099991586, -0.44721359549995793],
+        "film_left": -0.58,
+        "film_right": 0.5,
+        "film_bottom": -0.3,
+        "film_top": 0.35
+    },
+    
+    "materials": [
+        {
+            "name": "green_reflective",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,1,0 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 0.2,0.2,0.2 ],
+            
+            "refractive": false,
+            "color_refract": [ 0.75,0.75,1 ],
+            "index_of_refraction": 1.5
+        },
+        {
+            "name": "cueball",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0.9,0.9,0.9 ],
+            "color_specular": [ 0.1,0.1,0.1 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 0.75,0.75,1 ],
+            "index_of_refraction": 1.5
+        },
+        {
+            "name": "xaxis",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0.75, 0, 0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 0.75,0.75,1 ],
+            "index_of_refraction": 1.5
+        },
+        {
+            "name": "yaxis",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0, 0.75, 0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 0.75,0.75,1 ],
+            "index_of_refraction": 1.5
+        },
+        {
+            "name": "zaxis",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0, 0, 0.75 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 0.75,0.75,1 ],
+            "index_of_refraction": 1.5
+        },
+        {
+            "name": "glass",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 0,0,0 ],
+            
+            "refractive": true,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1.5
+        },
+        {
+            "name": "air",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 0,0,0 ],
+            
+            "refractive": true,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1.0
+        },
+        {
+            "name": "blue_air",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 0,0,0 ],
+            
+            "refractive": true,
+            "color_refract": [ 0.5,0.5,1 ],
+            "index_of_refraction": 1.0
+        },
+        {
+            "name": "heavy_blue_air",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 0,0,0 ],
+            
+            "refractive": true,
+            "color_refract": [ 0.5,0.5,1 ],
+            "index_of_refraction": 1.05
+        },
+        {
+            "name": "water",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 0,0,0 ],
+            
+            "refractive": true,
+            "color_refract": [ 0.5,0.5,1 ],
+            "index_of_refraction": 1.33
+        },
+        {
+            "name": "white_water",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 0,0,0 ],
+            
+            "refractive": true,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1.33
+        },
+        {
+            "name": "mirror",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,0 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 0,0,0 ],
+            "index_of_refraction": 1.0
+        },
+        {
+            "name": "cylinder",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 1,0,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 0.1,0.1,0.1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "floor",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 0.3,0.3,0.3 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "ceiling",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 1,1,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "behind",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 1,0.5,0 ],
+            "color_specular": [ 0,0,0 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        }
+    ],
+    
+    "lights": [
+        {
+            "position": [ 0,2,4,1 ],
+            "color": [ 0.5,0.5,0.5 ],
+            "color_ambient": [ 0,0,0 ]
+        },
+        
+        {
+            "position": [ 0,2,-1,1 ],
+            "color": [ 0.15,0.25,0.25 ],
+            "color_ambient": [ 0.3,0,0 ]
+        },
+        {
+            "position": [ 0,3,0,1 ],
+            "color": [ 0.25,0.15,0.25 ],
+            "color_ambient": [ 0,0.3,0 ]
+        },
+        {
+            "position": [ 0,4,1,1 ],
+            "color": [ 0.25,0.25,0.15 ],
+            "color_ambient": [ 0,0,0.3 ]
+        }
+    ],
+    
+    "transforms": [
+        {
+            "name": "identity",
+            "matrix": [ [ 1,0,0,0 ], [ 0,1,0,0 ], [ 0,0,1,0 ], [ 0,0,0,1 ] ]
+        },
+        
+        {
+            "name": "origin",
+            "scale": [0.2, 0.2, 0.2]
+        },
+        {
+            "name": "xaxis",
+            "scale": [0.1, 0.1, 1],
+            "rotate": { "degrees": 90, "axis": [ 0,1,0 ] }
+        },
+        {
+            "name": "yaxis",
+            "scale": [0.1, 0.1, 1],
+            "rotate": { "degrees": 90, "axis": [ -1,0,0 ] }
+        },
+        {
+            "name": "zaxis",
+            "scale": [0.1, 0.1, 1]
+        },
+        {
+            "name": "xarrow",
+            "scale": [0.2, 0.2, 0.4],
+            "rotate": { "degrees": 90, "axis": [ 0,1,0 ] },
+            "translate": [1,0,0]
+        },
+        {
+            "name": "yarrow",
+            "scale": [0.2, 0.2, 0.4],
+            "rotate": { "degrees": 90, "axis": [ -1,0,0 ] },
+            "translate": [0,1,0]
+        },
+        {
+            "name": "zarrow",
+            "scale": [0.2, 0.2, 0.4],
+            "translate": [0,0,1]
+        },
+        
+        {
+            "name": "sphere_small",
+            "translate": [ -1,1,-4 ],
+            "scale": [ 0.4, 0.4, 0.4 ],
+            "rotate": { "degrees": 45, "axis": [ 1,1,1 ] }
+        },
+        {
+            "name": "sphere_small_up1",
+            "translate": [ -1,2,-4 ],
+            "scale": [ 0.4, 0.4, 0.4 ],
+            "rotate": { "degrees": 45, "axis": [ 1,1,1 ] }
+        },
+        {
+            "name": "sphere_small_up1_right1",
+            "translate": [ 0.5,2,-4 ],
+            "scale": [ 0.4, 0.4, 0.4 ],
+            "rotate": { "degrees": 135, "axis": [ 1,1,1 ] }
+        },
+        {
+            "name": "sphere_small_up2",
+            "translate": [ -1,3,-4 ],
+            "scale": [ 0.4, 0.4, 0.4 ],
+            "rotate": { "degrees": 45, "axis": [ 1,1,1 ] }
+        },
+        {
+            "name": "sphere_small_up3",
+            "translate": [ -1,4,-4 ],
+            "scale": [ 0.4, 0.4, 0.4 ],
+            "rotate": { "degrees": 45, "axis": [ 1,1,1 ] }
+        },
+        
+        {
+            "name": "sphere_flattened",
+            "translate": [ -3,0.5,-3 ],
+            "scale": [ 0.2, 2, 1 ],
+            "rotate": { "degrees": 45, "axis": [ 0,-1,1 ] }
+        },
+        {
+            "name": "sphere_flattened_left1",
+            "translate": [ -5,0.5,-3 ],
+            "scale": [ 0.2, 2, 1 ],
+            "rotate": { "degrees": 45, "axis": [ 0,-1,1 ] }
+        },
+        {
+            "name": "sphere_flattened_left2",
+            "translate": [ -7,0.5,-3 ],
+            "scale": [ 0.2, 2, 1 ],
+            "rotate": { "degrees": 45, "axis": [ 0,-1,1 ] }
+        },
+        {
+            "name": "sphere_flattened_left3",
+            "translate": [ -9,0.5,-3 ],
+            "scale": [ 0.2, 2, 1 ],
+            "rotate": { "degrees": 45, "axis": [ 0,-1,1 ] }
+        },
+        
+        {
+            "name": "cylinder",
+            "translate": [ 2,2,-1 ],
+            "rotate": { "degrees": -45, "axis": [ 1,0,0 ] }
+        },
+        {
+            "name": "cylinder_flip",
+            "translate": [ 4,2,-1 ],
+            "rotate": { "degrees": 135, "axis": [ 1,0,0 ] }
+        },
+        {
+            "name": "cone_flip",
+            "translate": [ 6,2,-1 ],
+            "rotate": { "degrees": 135, "axis": [ 1,0,0 ] },
+            "scale": [ 1,1,2 ]
+        },
+        
+        {
+            "name": "floor",
+            "translate": [ 0,-2,0 ],
+            "rotate": { "degrees": -90, "axis": [ 1,0,0 ] }
+        },
+        {
+            "name": "ceiling",
+            "translate": [ 0,5,0 ],
+            "rotate": { "degrees": 90, "axis": [ 1,0,0 ] }
+        },
+        {
+            "name": "behind",
+            "translate": [ 0,0,-6 ]
+        },
+        
+        {
+            "name": "cube-around-sphere",
+            "translate": [3,0,0],
+            "scale": [ 0.5, 0.5, 0.5 ]
+        },
+        {
+            "name": "sphere-in-cube",
+            "translate": [3,0,0],
+            "scale": [ 0.4, 0.4, 0.4 ]
+        }
+    ],
+    
+    "shapes": [
+        {
+            "type": "plane",
+            "transform": "floor",
+            "material": "floor"
+        },
+        {
+            "type": "plane",
+            "transform": "ceiling",
+            "material": "ceiling"
+        },
+        {
+            "type": "plane",
+            "transform": "behind",
+            "material": "behind"
+        },
+        
+        {
+            "type": "cylinder",
+            "transform": "cylinder",
+            "material": "cylinder"
+        },
+        {
+            "type": "cylinder",
+            "transform": "cylinder_flip",
+            "material": "cylinder"
+        },
+        {
+            "type": "cone",
+            "transform": "cone_flip",
+            "material": "cylinder"
+        },
+        
+        {
+            "type": "sphere",
+            "transform": "sphere_small",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cube",
+            "transform": "sphere_small_up1",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cube",
+            "transform": "sphere_small_up1_right1",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cone",
+            "transform": "sphere_small_up2",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cylinder",
+            "transform": "sphere_small_up3",
+            "material": "green_reflective"
+        },
+        
+        {
+            "type": "sphere",
+            "transform": "sphere_flattened",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cube",
+            "transform": "sphere_flattened_left1",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cone",
+            "transform": "sphere_flattened_left2",
+            "material": "green_reflective"
+        },
+        {
+            "type": "cylinder",
+            "transform": "sphere_flattened_left3",
+            "material": "green_reflective"
+        },
+        
+        {
+            "type": "cube",
+            "transform": "cube-around-sphere",
+            "material": "water"
+        },
+        {
+            "type": "sphere",
+            "transform": "sphere-in-cube",
+            "material": "cueball"
+        },
+        
+        {
+            "type": "sphere",
+            "transform": "origin",
+            "material": "cueball"
+        },
+        {
+            "type": "cylinder",
+            "transform": "xaxis",
+            "material": "xaxis"
+        },
+        {
+            "type": "cylinder",
+            "transform": "yaxis",
+            "material": "yaxis"
+        },
+        {
+            "type": "cylinder",
+            "transform": "zaxis",
+            "material": "zaxis"
+        },
+        {
+            "type": "cone",
+            "transform": "xarrow",
+            "material": "xaxis"
+        },
+        {
+            "type": "cone",
+            "transform": "yarrow",
+            "material": "yaxis"
+        },
+        {
+            "type": "cone",
+            "transform": "zarrow",
+            "material": "zaxis"
+        }
+    ]
+}

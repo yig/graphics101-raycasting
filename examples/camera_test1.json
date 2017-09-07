@@ -1,0 +1,130 @@
+{
+    "camera": {
+        "type": "perspective",
+        "focal_length": 1,
+        "eye": [ 0,0,0 ],
+        "look": [ 0,0,-1 ],
+        "up": [ 0,1,0 ],
+        "film_left": -0.5,
+        "film_right": 0.5,
+        "film_bottom": -0.5,
+        "film_top": 0.5
+    },
+    
+    "materials": [
+        {
+            "name": "sphere",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,1,0 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "cylinder",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 1,0,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 0.1,0.1,0.1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "plane",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        }
+    ],
+    
+    "lights": [
+        {
+            "position": [ 0,3,0,1 ],
+            "color": [ 1,1,1 ],
+            "color_ambient": [ 1,1,1 ]
+        }
+    ],
+    
+    "transforms": [
+        {
+            "name": "identity",
+            "matrix": [ [ 1,0,0,0 ], [ 0,1,0,0 ], [ 0,0,1,0 ], [ 0,0,0,1 ] ]
+        },
+        {
+            "name": "sphere",
+            "translate": [ 0,0,-4 ]
+        },
+        {
+            "name": "sphere2",
+            "translate": [ -1,1,-4 ],
+            "scale": [ 0.25, 0.25, 0.25 ]
+        },
+        {
+            "name": "sphere3",
+            "translate": [ -2,0.5,-3 ],
+            "scale": [ 0.2, 2, 1 ],
+            "rotate": { "degrees": 45, "axis": [ 0,0,1 ] }
+        },
+        {
+            "name": "cylinder",
+            "translate": [ 2,1,-4 ],
+            "rotate": { "degrees": -45, "axis": [ 1,0,0 ] }
+        },
+        {
+            "name": "plane",
+            "translate": [ 0,-1,0 ],
+            "rotate": { "degrees": -90, "axis": [ 1,0,0 ] }
+        }
+    ],
+    
+    "shapes": [
+        {
+            "type": "sphere",
+            "transform": "sphere",
+            "material": "sphere"
+        },
+        {
+            "type": "plane",
+            "transform": "plane",
+            "material": "plane"
+        },
+        {
+            "type": "cylinder",
+            "transform": "cylinder",
+            "material": "cylinder"
+        },
+        
+        {
+            "type": "sphere",
+            "transform": "sphere2",
+            "material": "sphere"
+        },
+        {
+            "type": "sphere",
+            "transform": "sphere3",
+            "material": "sphere"
+        }
+    ]
+}
