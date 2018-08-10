@@ -1,0 +1,75 @@
+# Ray Shape Intersection Formula
+
+## Sphere
+
+For the unit sphere F(x,y,z) = x^2 + y^2 + z^2 - 1, the ray p+t*d intersects when the quadratic expression a*t^2 + b*t + c = 0, with
+
+a = dx^2 + dy^2 + dz^2  
+b = 2*( px*dx + py*dy + pz*dz )  
+c = px^2 + py^2 + pz^2 - 1.0
+
+The normal to this sphere is < 2*x, 2*y, 2*z >, where x,y,z are a point on the sphere.
+
+
+## Plane
+
+For the plane F(x,y,z) = -z, the ray p+t*d intersects when the linear expression b*t + c = 0, with
+
+b = dz
+a = pz
+
+This has one solution t. If t is negative, it is invalid (no intersection).
+
+The normal to this plane is < 0, 0, -1 >.
+
+
+## Cylinder
+
+For the body of the cylinder F(x,y,z) = x^2 + y^2 - 1, the ray p+t*d intersects when the quadratic expression a*t^2 + b*t + c = 0, with
+
+a = dx^2 + dy^2
+b = 2*( px*dx + py*dy )
+c = px^2 + py^2 - 1.0
+
+This has zero, one, or two solutions. If one of the solution t is negative, it is invalid. If the point q=p+t*d has z coordinate outside [0,1], that t is invalid.
+
+The normal to the body is < 2*x, 2*y, 0 >, where x,y,z are a point on the cylinder.
+
+The bottom face F(x,y,z) = -z is the same as the Plane shape above.
+
+For the top face F(x,y,z) = z - 1, the ray p+t*d intersects when the linear expression b*t + c = 0, with
+
+b = dz  
+a = pz - 1
+
+The normal to the top plane is < 0, 0, 1 >.
+
+If the solution t for the top or bottom face is negative or produces a point q=p+t*d whose qx^2+qy^2 > 1, that solution t is invalid.
+
+## Cone
+
+For the body of the cone F(x,y,z) = x^2 + y^2 - (1-z)^2, the ray p+t*d intersects when the quadratic expression a*t^2 + b*t + c = 0, with
+
+a = dx^2 + dy^2 - dz^2
+b = 2*( px*dx + py*dy + (1-pz)*dz )
+c = px^2 + py^2 - (1-pz)^2
+
+This has zero, one, or two solutions. If one of the solution t is negative, it is invalid. If the point q=p+t*d has z coordinate outside [0,1], that t is invalid.
+
+The normal to the body is < 2*x, 2*y, 2*(1-z) >, where x,y,z are a point on the cone.
+
+The bottom face F(x,y,z) = -z is the same as the Plane shape above.
+If the solution t for the bottom face produces a point q=p+t*d whose qx^2+qy^2 > 1, that solution t is invalid.
+
+
+## Cube
+
+For the face c = `sign`, where c is x,y,z and sign is +1 or -1, F(x,y,z) = sign*c - 1, the ray p+t*d intersects when the linear expression b*t + c = 0, with
+
+b = dc  
+a = pc - sign
+
+This has one solution t. If t is negative, it is invalid (no intersection).
+If the solution t produces a point q=p+t*d either of whose other two coordinates (e.g. x and y if c is z) are outside [0,1], that t is invalid.
+
+The normal to the face has "sign" as its c coordinate. The other coordinates are zero.
