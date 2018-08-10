@@ -126,7 +126,7 @@ the eye **e** through the aforementioned film plane point:
 *u* **u** + *v* **v** - *d* **w**.
 (In TeX: $u\mathbf{u} + v\mathbf{v} - d\mathbf{w}$.)
 
-    * **(5 points)** CameraOrthographic::getRay( u,v )
+    * **(5 points)** `CameraOrthographic::getRay( u,v )`
 
         * Return a world-space ray through the pixel located at (*u,v*) on the
 film plane. A point (*u,v*) on the film plane is located at
