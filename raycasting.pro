@@ -11,6 +11,7 @@ CONFIG -= app_bundle
 SOURCES += \
     camera.cpp \
     main.cpp \
+    mesh.cpp \
     scene.cpp \
     shape.cpp \
     parser.cpp
