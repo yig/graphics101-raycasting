@@ -67,7 +67,7 @@ directory" to the `examples` subdirectory, or else copy
 great debugger.
 
 * Create 600 pixel images for each of the following `.json` scenes. Copy the
-`.json` and your `.png` files into a new `test` subdirectory.
+`.json` and your `.png` files into a new `test/` subdirectory.
 
     * spheres_cylinder.json
     * cone_cube.json
@@ -81,7 +81,7 @@ great debugger.
 * When done, zip your entire `raycasting` directory, including the `test`
 subdirectory containing the scenes and your program's output on them
 with the `long_edge_pixels` command line parameter set to 600, and a
-*Notes.txt* file. Name the zip file *hw02\_lastname\_firstname.zip.*
+*Notes.txt* file. Name the zip file *hw02_lastname_firstname.zip.*
 Upload your solution to Blackboard before the deadline. Your
 *Notes.txt* should describe any known issues or extra features. Your
 *Notes.txt* should also note the names of people in the class who
