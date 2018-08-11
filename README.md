@@ -69,13 +69,13 @@ great debugger.
 * Create 600 pixel images for each of the following `.json` scenes. Copy the
 `.json` and your `.png` files into a new `test/` subdirectory.
 
-    * spheres_cylinder.json
-    * cone_cube.json
-    * stress_test.json
-    * camera_test1.json
-    * camera_test2.json
-    * orthographic_test1.json
-    * orthographic_test2.json
+    * `spheres_cylinder.json`
+    * `cone_cube.json`
+    * `stress_test.json`
+    * `camera_test1.json`
+    * `camera_test2.json`
+    * `orthographic_test1.json`
+    * `orthographic_test2.json`
     * A `.json` scene that you make yourself
 
 * When done, zip your entire `raycasting` directory, including the `test`
