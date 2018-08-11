@@ -78,7 +78,7 @@ great debugger.
     * `orthographic_test2.json`
     * A `.json` scene that you make yourself
 
-* When done, zip your entire `raycasting` directory, including the `test`
+* When done, zip your entire `raycasting` directory, including the `test/`
 subdirectory containing the scenes and your program's output on them
 with the `long_edge_pixels` command line parameter set to 600, and a
 *Notes.txt* file. Name the zip file *hw02_lastname_firstname.zip.*
@@ -109,6 +109,9 @@ artwork like this:
 The assignment is broken down into three parts: (1) creating 3D rays
 through pixels, (2) intersecting 3D rays with various 3D shapes, and (3)
 computing a color for the ray.
+
+(You will add illumination in the follow-up assignment,
+[raytracing](https://github.com/yig/graphics101-raytracing).)
 
 Rubric
 ------
