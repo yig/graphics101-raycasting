@@ -13,14 +13,14 @@ The normal to this sphere is < 2*x, 2*y, 2*z >, where x,y,z are a point on the s
 
 ## Plane
 
-For the plane F(x,y,z) = -z, the ray p+t*d intersects when the linear expression b*t + c = 0, with
+For the plane F(x,y,z) = z, the ray p+t*d intersects when the linear expression b*t + c = 0, with
 
 b = dz
 c = pz
 
 This has one solution t. If t is negative, it is invalid (no intersection).
 
-The normal to this plane is < 0, 0, -1 >.
+The normal to this plane is < 0, 0, 1 >.
 
 
 ## Cylinder
