@@ -64,12 +64,12 @@ If the solution t for the bottom face produces a point q=p+t*d whose qx^2+qy^2 >
 
 ## Cube
 
-For the face c = `sign`, where c is x,y,z and sign is +1 or -1, F(x,y,z) = sign*c - 1, the ray p+t*d intersects when the linear expression b*t + c = 0, with
+For the face x = `sign`, where sign is +1 or -1 and x could just as easily be y or z, F(x,y,z) = sign*x - 1, the ray p+t*d intersects when the linear expression b*t + c = 0, with
 
-b = dc  
-a = pc - sign
+b = dx  
+c = px - sign
 
 This has one solution t. If t is negative, it is invalid (no intersection).
-If the solution t produces a point q=p+t*d either of whose other two coordinates (e.g. x and y if c is z) are outside [0,1], that t is invalid.
+If the solution t produces a point q=p+t*d either of whose other two coordinates (e.g. y and z if we are looking at the face x = 1) are outside [0,1], that t is invalid.
 
-The normal to the face has "sign" as its c coordinate. The other coordinates are zero.
+The normal to the face has "sign" as its x coordinate. The other coordinates are zero.
