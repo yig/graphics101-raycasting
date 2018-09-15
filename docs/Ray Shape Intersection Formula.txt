@@ -70,6 +70,6 @@ b = dx
 c = px - sign
 
 This has one solution t. If t is negative, it is invalid (no intersection).
-If the solution t produces a point q=p+t*d either of whose other two coordinates (e.g. y and z if we are looking at the face x = 1) are outside [0,1], that t is invalid.
+If the solution t produces a point q=p+t*d either of whose other two coordinates (e.g. q.y and q.z if we are looking at the cube face x = 1) are outside [0,1], that t is invalid.
 
 The normal to the face has "sign" as its x coordinate. The other coordinates are zero.
