@@ -1,4 +1,15 @@
 def intersect_cylinder( p, d ):
+    '''
+    Given a ray as a point `p` and direction `d`, returns ( t, n )
+    such that `p + t*d` is the closest point on the cylinder
+    intersected by the ray and n is the normal at that point.
+    
+    NOTE: This pseudocode does not consider the transformation into
+          and out of object-space.
+    '''
+    
+    ## The list of all intersections.
+    ts = []
     
     ## z = 0 plane: F( x,y,z ) = -z
     t = -p.z / d.z
