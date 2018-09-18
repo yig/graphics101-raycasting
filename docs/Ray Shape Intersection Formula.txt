@@ -31,7 +31,7 @@ a = dx^2 + dy^2
 b = 2*( px*dx + py*dy )
 c = px^2 + py^2 - 1.0
 
-This has zero, one, or two solutions. If one of the solution t is negative, it is invalid. If the point q=p+t*d has z coordinate outside [0,1], that t is invalid.
+This has zero, one, or two solutions. If one of the solution t is negative, it is invalid. If the point q=p+t*d has z coordinate outside [-1,1], that t is invalid.
 
 The normal to the body is < 2*x, 2*y, 0 >, where x,y,z are a point on the cylinder.
 
