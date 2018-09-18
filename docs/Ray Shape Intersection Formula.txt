@@ -40,7 +40,7 @@ The bottom face F(x,y,z) = -z is the same as the Plane shape above.
 For the top face F(x,y,z) = z - 1, the ray p+t*d intersects when the linear expression b*t + c = 0, with
 
 b = dz  
-a = pz - 1
+c = pz - 1
 
 The normal to the top plane is < 0, 0, 1 >.
 
