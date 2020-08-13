@@ -17,11 +17,9 @@
 
 #include <cassert>
 
-#include <cmath> // std::sqrt(), M_PI
-#ifndef M_PI
-#define M_PI 3.14159265358979323846264338327950288
-#endif
+#include <cmath> // std::sqrt()
 #include <algorithm> // std::min(), std::max()
+#include <limits> // infinity
 
 namespace graphics101 {
     typedef double real;
@@ -49,6 +47,10 @@ namespace graphics101 {
     typedef std::vector< Triangle > TriangleVec;
     
     typedef std::string string;
+    
+    // Constants
+    const double infinity = std::numeric_limits<real>::infinity();
+    const double pi = 3.14159265358979323846264338327950288;
 }
 
 #endif /* __types_h__ */
