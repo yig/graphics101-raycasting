@@ -1,9 +1,5 @@
 #include "scene.h"
 
-// Some cross-platform path stuff.
-// We assume C++17, so we can use std::filesystem.
-#include <filesystem>
-
 // textures
 #include "image.h"
 
@@ -19,6 +15,39 @@
 using json = nlohmann::json;
 
 using namespace graphics101;
+
+namespace {
+// Paths inside the JSON are always relative to the JSON file.
+// Store the path to the JSON file's enclosing folder in this global variable.
+// If it's empty, it means that the JSON file itself is located in the current working
+// directory.
+std::string PATH_PREFIX;
+
+std::string resolve_path( const std::string& json_relative_path ) {
+    return PATH_PREFIX + json_relative_path;
+}
+
+void set_path_prefix( const std::string& path_to_json ) {
+    // https://stackoverflow.com/questions/3071665/getting-a-directory-name-from-a-filename/3071694#3071694
+    const auto found = path_to_json.find_last_of(
+#ifdef _WIN32
+        // Both kinds of slashes are valid path separators on Windows.
+        "/\\"
+#else
+        "/"
+#endif
+        );
+    // If there are no directory separators, then `path_to_json` is in the
+    // current working directory. We don't need a prefix.
+    if( found == std::string::npos ) {
+        PATH_PREFIX = "";
+        return;
+    }
+    
+    // The prefix is everything up to and including the last slash.
+    PATH_PREFIX = path_to_json.substr( 0, found+1 );
+}
+}
 
 // from_json() needs to be in the namespace of the type.
 // However, what graphics101 calls vec3 and what glm calls vec3 differ by float/double.
@@ -193,7 +222,7 @@ void parse_textures( const json& j, Scene& scene ) {
     // Iterate over object properties
     for( auto it = j.begin(); it != j.end(); ++it ) {
         Image image;
-        const std::string image_path = it.value().get<std::string>();
+        const std::string image_path = resolve_path( it.value().get<std::string>() );
         if( !image.load( image_path ) ) {
             std::cerr << "Error loading image: " << image_path << '\n';
             // We'll still store this Image object in the dictionary of
@@ -221,36 +250,15 @@ void from_json( const json& j, Scene& scene ) {
     }
 }
 
-// Push current working directory. RAII.
-namespace {
-class PushDir {
-public:
-    PushDir( const std::filesystem::path& path ) {
-        // Save the current working directory.
-        m_old_path = std::filesystem::current_path();
-        // Set the current working directory to what the user asked.
-        std::filesystem::current_path( path );
-    }
-    ~PushDir() {
-        // Restore the current working directory.
-        std::filesystem::current_path( m_old_path );
-    }
-private:
-    std::filesystem::path m_old_path;
-};
-}
-
 bool Scene::parse( const std::string& path_to_file ) {
     std::ifstream infile( path_to_file );
     if( !infile ) return false;
     json j;
     infile >> j;
-    // There may be relative paths in the JSON. Temporarily set the current working
-    // directory to the directory of the scene file.
-    {
-        PushDir( std::filesystem::path( path_to_file ).parent_path() );
-        *this = j;
-    }
+    // There may be relative paths in the JSON. Prepend its path prefix to each
+    // path inside.
+    set_path_prefix( path_to_file );
+    *this = j;
     return true;
     
     /*

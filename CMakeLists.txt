@@ -2,8 +2,8 @@ cmake_minimum_required(VERSION 3.1.0)
 
 project(raycasting)
 
-# We want C++17 for filesystem
-set (CMAKE_CXX_STANDARD 17)
+# We want C++11
+set (CMAKE_CXX_STANDARD 11)
 
 add_executable(raycasting
     camera.cpp
