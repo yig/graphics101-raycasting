@@ -17,6 +17,7 @@ computing a color for the ray.
 (You will add illumination in the follow-up assignment,
 [raytracing](https://github.com/yig/graphics101-raytracing).)
 
+Background reading for this assignment: Chapter 4 *Ray Tracing* and Chapter 13.2 *Instancing* from *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley.
 
 Goals:
 ------
@@ -83,19 +84,16 @@ great debugger interface.
     * `orthographic_test2.json`
     * A `.json` scene that you make yourself
 
-* You are also encouraged to share blooper images you create while implementing the assignment on Piazza.
+* You are encouraged to share blooper images you create while implementing the assignment on Piazza.
 
 * Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
 helping you (not by giving your their code!).
 
 * When done, zip your entire `raycasting` directory, including your `Notes.txt`
 and the `test/` subdirectory containing the scenes and your program's output on
-them with the `long_edge_pixels` command line parameter set to 600, and a
-*Notes.txt* file. Name the zip file *hw02_lastname_firstname.zip.* Upload your
-solution to Blackboard before the deadline. Your *Notes.txt* should describe any
-known issues or extra features. Your *Notes.txt* should also note the names of
-people in the class who deserve a star for helping you (not by giving your their
-code!).
+them with the `long_edge_pixels` command line parameter set to 600. Name the zip
+file `hw02_lastname_firstname.zip`. Upload your solution to Blackboard before
+the deadline.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
