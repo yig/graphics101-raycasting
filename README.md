@@ -1,102 +1,6 @@
 Computer Graphics - Homework Assignment 2 - Raycasting
 ======================================================
 
-Goals:
-------
-
-* Understand how to create a virtual picture of a 3D scene.
-
-* Gain experience deriving and implementing mathematical expressions for
-geometric calculations.
-
-* Become familiar with a 3D math library (bonus: identical to one
-available when programming for a GPU).
-
-* Become more comfortable with C++.
-
-Getting Started & Handing In:
------------------------------
-
-* This is a programming assignment. The code framework is provided here.
-
-* The code will be written in C++. This time, the project is more complex
-and you will see and need to use more of the language, including the
-`std::vector` container class and object-oriented programming. I have made
-use of the modern C++11 standard where appropriate. This makes the
-language easier to write and safer, though some reference material,
-tutorials, and examples you find will be outdated.
-
-* The program is a command line program. It makes use of the open source
-Qt framework only to save the resulting raster image to disk.
-
-* You should have already successfully installed the open source version
-of the Qt environment from the last assignment:
-<https://www.qt.io/download-open-source>
-(At the time of writing, version 5.11 is the newest version. Any 5.x
-version should work. The installer, by default, includes all versions of
-Qt. Save space by installing only the most recent version and a
-compiler.) Mac users with [Homebrew](https://brew.sh/)
-can alternatively install via: `brew install qt` and `brew cask install qt-creator`.
-
-* Download the assignment. This will create a folder named `raycasting`. Open
-the file named `raycasting.pro`. This should launch the Qt Creator
-development environment (IDE).
-
-* Build and run the code. The code should compile, but it will complain
-when running about not having enough arguments. You should see a message
-like:
-
-        Usage: raycasting path/to/scene.json image_out.png long_edge_pixels
-
-* To set the command line arguments that Qt Creator uses, click on
-"Projects" and then, under "Build & Run", click on "Run." Set the
-"Command line arguments" appropriately. For example:
-
-        spheres_cylinder.json spheres_cylinder-test.png 500
-
-    ![Qt Creator > Projects > Run > Command Line Arguments](docs/readme_images/qt-creator.png)
-
-    For those arguments to work, you would either need to set "Working
-directory" to the `examples` subdirectory, or else copy
-`spheres_cylinder.json` next to the "Executable" (or wherever you point
-"Working directory").
-
-* Add your code to `camera.cpp`, `scene.cpp`, and `shape.cpp`.
-
-* Build and run and test that it is working correctly. Qt Creator has a
-great debugger.
-
-* Create 600 pixel images for each of the following `.json` scenes. Copy the
-`.json` and your `.png` files into a new `test/` subdirectory.
-
-    * `spheres_cylinder.json`
-    * `cone_cube.json`
-    * `stress_test.json`
-    * `camera_test1.json`
-    * `camera_test2.json`
-    * `orthographic_test1.json`
-    * `orthographic_test2.json`
-    * A `.json` scene that you make yourself
-
-* When done, zip your entire `raycasting` directory, including the `test/`
-subdirectory containing the scenes and your program's output on them
-with the `long_edge_pixels` command line parameter set to 600, and a
-*Notes.txt* file. Name the zip file *hw02_lastname_firstname.zip.*
-Upload your solution to Blackboard before the deadline. Your
-*Notes.txt* should describe any known issues or extra features. Your
-*Notes.txt* should also note the names of people in the class who
-deserve a star for helping you (not by giving your their code!).
-
-* The framework and glm vector math library provide all the support code
-that you need.
-
-* **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
-written for this assignment should be original! Although you are
-permitted to consult with each other while working on this assignment,
-code that is substantially the same will be considered cheating.** In your
-`Notes.txt`, please note who deserves a star (who helped you with the
-assignment).
-
 Overview:
 ---------
 
@@ -113,6 +17,94 @@ computing a color for the ray.
 (You will add illumination in the follow-up assignment,
 [raytracing](https://github.com/yig/graphics101-raytracing).)
 
+
+Goals:
+------
+
+* Understand how to create a virtual picture of a 3D scene.
+
+* Gain experience deriving and implementing mathematical expressions for
+geometric calculations.
+
+* Become familiar with a 3D math library (bonus: identical to one
+available when programming for a GPU).
+
+* Become more comfortable with C++.
+
+Getting Started & Handing In:
+-----------------------------
+
+* Download or clone this code repository. Don't fork it on GitHub, or else your code will be visible to everyone.
+
+* Follow the instructions to install a working development environment: <https://github.com/yig/graphics101> . You do not need to install Qt or any other external libraries for this assignment.
+
+* The program is a command line program. The framework and included glm vector math library provide all the support code that you need.
+
+* The code will be written in C++. This time, the project is more complex
+and you will see and need to use more of the language, including the
+`std::vector` container class and object-oriented programming. I have made
+use of the modern C++11 standard where appropriate. This makes the
+language easier to write and safer, though some reference material,
+tutorials, and examples you find will be outdated.
+
+* Build and run the code. The code should compile, but it will complain
+when running about not having enough arguments. You should see a message
+like:
+
+        Usage: raycasting path/to/scene.json image_out.png long_edge_pixels
+
+* If you are using an IDE like Qt Creator, you will need to set the command line arguments used when running your program. In Qt Creator, click on
+"Projects" and then, under "Build & Run", click on "Run." Set the
+"Command line arguments" appropriately. For example:
+
+        spheres_cylinder.json spheres_cylinder-test.png 500
+
+    ![Qt Creator > Projects > Run > Command Line Arguments](docs/readme_images/qt-creator.png)
+
+    For those arguments to work, you would either need to set "Working
+directory" to the `examples` subdirectory, or else copy
+`spheres_cylinder.json` next to the "Executable" (or wherever you point
+"Working directory").
+
+* Add your code to `camera.cpp`, `scene.cpp`, and `shape.cpp`.
+
+* Build and run and test that it is working correctly. Qt Creator has a
+great debugger interface.
+
+* Create 600 pixel images for each of the following `.json` scenes. Copy the
+`.json` and your `.png` files into a new `test/` subdirectory.
+
+    * `spheres_cylinder.json`
+    * `cone_cube.json`
+    * `stress_test.json`
+    * `camera_test1.json`
+    * `camera_test2.json`
+    * `orthographic_test1.json`
+    * `orthographic_test2.json`
+    * A `.json` scene that you make yourself
+
+* You are also encouraged to share blooper images you create while implementing the assignment on Piazza.
+
+* Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
+helping you (not by giving your their code!).
+
+* When done, zip your entire `raycasting` directory, including your `Notes.txt`
+and the `test/` subdirectory containing the scenes and your program's output on
+them with the `long_edge_pixels` command line parameter set to 600, and a
+*Notes.txt* file. Name the zip file *hw02_lastname_firstname.zip.* Upload your
+solution to Blackboard before the deadline. Your *Notes.txt* should describe any
+known issues or extra features. Your *Notes.txt* should also note the names of
+people in the class who deserve a star for helping you (not by giving your their
+code!).
+
+* **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
+written for this assignment should be original! Although you are
+permitted to consult with each other while working on this assignment,
+code that is substantially the same will be considered cheating.** In your
+`Notes.txt`, please note who deserves a star (who helped you with the
+assignment).
+
+
 Rubric
 ------
 
@@ -122,21 +114,20 @@ Rubric
 
         * Return a world-space ray through the pixel located at (*u,v*) on the
 film plane. A point (*u,v*) on the film plane is located at
-**e** + *u* **u** + *v* **v** - *d* **w** in world-space. (That formula written in TeX markup is: $\mathbf{e} + u\mathbf{u} + v\mathbf{v} - d\mathbf{w}$.)
+**e** + *u* **u** + *v* **v** - *d* **w** in world-space.
 Your ray can emanate from the eye **e** itself or from the film
 plane point. The world-space direction of the rays is the direction from
 the eye **e** through the aforementioned film plane point:
 *u* **u** + *v* **v** - *d* **w**.
-(In TeX: $u\mathbf{u} + v\mathbf{v} - d\mathbf{w}$.)
 
     * **(5 points)** `CameraOrthographic::getRay( u,v )`
 
         * Return a world-space ray through the pixel located at (*u,v*) on the
 film plane. A point (*u,v*) on the film plane is located at
-**e** + *u* **u** + *v* **v** in world-space. (In TeX: $\mathbf{e} + u\mathbf{u} + v\mathbf{v}$.)
+**e** + *u* **u** + *v* **v** in world-space.
  The world-space
 rays of an orthographic camera are all parallel, in the direction
--**w**. (In TeX: $- \mathbf{w}$.)
+-**w**.
 
 * **(10 points)** The rendering loop. `Scene` methods:
 
@@ -165,14 +156,10 @@ methods:
 
         * F(x,y,z) = x² + y² + z² - 1
 
-            $$F(x,y,z) = x^2 + y^2 + z^2 - 1$$
-
     * **(15 points)** Plane (the *xy* plane, also known as the
 *z* = 0 plane)
 
         * F(x,y,z) = z
-
-            $$F(x,y,z) = z$$
 
     * **(15 points)** Cylinder (bottom at the origin, top at (0,0,1), radius 1)
 with a top and bottom cap (circles with radius 1 at z=0 and z=1).
@@ -182,23 +169,12 @@ You handle this as a collection of three shapes with conditions:
         * if x² + y² < 1: F(x,y,z) = -z
         * if x² + y² < 1: F(x,y,z) = z-1
         
-        $$\begin{align}
-        F\_\text{body}(x,y,z) &= x^2 + y^2 - 1 & \text{if}&\quad 0<z<1 \\\\
-        F\_\text{top}(x,y,z) &= z - 1 & \text{if}&\quad x^2+y^2 < 1 \\\\
-        F\_\text{bottom}(x,y,z) &= -z & \text{if}&\quad x^2+y^2 < 1
-        \end{align}$$
-
     * **(15 points)** Cone (bottom at the origin, top at (0,0,1), radius 1 at
 the bottom, radius 0 at the top, with a bottom cap).
 You handle this as a collection of two shapes with conditions:
     
         * if 0 < z ≤ 1: F(x,y,z) = x² + y² - (1 - z)²
         * if x² + y² < 1: F(x,y,z) = -z
-        
-        $$\begin{align}
-        F\_\text{body}(x,y,z) &= x^2 + y^2 - (1-z)^2 & \text{if}&\quad 0<z \leq 1 \\\\
-        F\_\text{bottom}(x,y,z) &= -z & \text{if}&\quad x^2+y^2 < 1
-        \end{align}$$
 
     * **(15 points)** Cube (centered at the origin, with vertices
 ( ±1, ±1, ±1)$). Think of it as six planes:
@@ -209,15 +185,6 @@ You handle this as a collection of two shapes with conditions:
         * if -1 ≤ x,z ≤ 1: F(x,y,z) = -(y+1)
         * if -1 ≤ x,y ≤ 1: F(x,y,z) = z-1
         * if -1 ≤ x,y ≤ 1: F(x,y,z) = -(z+1)
-
-        $$\begin{align}
-        F\_\text{right}(x,y,z)  &= x-1    & \text{if}&\quad -1 \leq y,z \leq 1 \\\\
-        F\_\text{left}(x,y,z)   &= -(x+1) & \text{if}&\quad -1 \leq y,z \leq 1 \\\\
-        F\_\text{top}(x,y,z)    &= y-1    & \text{if}&\quad -1 \leq x,z \leq 1 \\\\
-        F\_\text{bottom}(x,y,z) &= -(y+1) & \text{if}&\quad -1 \leq x,z \leq 1 \\\\
-        F\_\text{front}(x,y,z)  &= z-1    & \text{if}&\quad -1 \leq x,y \leq 1 \\\\
-        F\_\text{back}(x,y,z)   &= -(z+1) & \text{if}&\quad -1 \leq x,y \leq 1
-        \end{align}$$
 
     * **(bonus 25 points)** Mesh (arbitrary triangle meshes)
 
@@ -302,7 +269,7 @@ You may notice a `typedef` in one of the headers involving
 old `T*` (pointer). It is a reference counted pointer, so we don't have
 to worry about freeing memory or memory leaks.
 
-glm and C/C++ standard library functions you need for this assignment
+`glm` and C/C++ standard library functions you need for this assignment
 ---------------------------------------------------------------------
 
 **glm.** This assignment makes heavy use of the `glm` library for vector
@@ -326,20 +293,21 @@ vectors from lower-dimensional ones. For example, to create a `vec4` from
 a `vec3 v`, use `vec4(v,1.0)`. That sets the 4th component w to 1.0.
 
 **sqrt(x), fabs(x), lround(x), std::min(a,b), std::max(a,b)**. They are
-part of C's math.h and C++'s `<algorithm>`. Note that `std::min` and
+part of C's math.h (in C++ included as `<cmath>`)
+and C++'s `<algorithm>`. Note that `std::min` and
 `std::max` require both parameters to have the exact same type. If not,
 you will get a very long compiler error since they are generic functions
 written using C++ templates.
 
 Note: This is not necessarily a complete list. I may be forgetting some!
 
-Qt you need for this assignment
--------------------------------
+Support code functions you need for this assignment
+-----------------------------------------
 
-**QImage.** The method `image.setPixel(x,y,c)` to set the pixel x,y of a
-`QImage` image to a `QRgb` color c. To get the width and height of the
+**Image.** The method `image.pixel(x,y) = c` to set the pixel x,y of an
+`Image` image to a `ColorRGBA8` color c. To get the width and height of the
 image, use `image.width()` and `image.height()`.
 
-**QRgb.** To create an RGB `QRgb` color, use `qRgb( red, green, blue )`.
+**ColorRGBA8.** To create an RGB `ColorRGBA8` color, use `ColorRGBA8( red, green, blue )`.
 Each of the parameters should be an integer number in the range
 [0,255], inclusive.

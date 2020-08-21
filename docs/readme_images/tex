@@ -1,0 +1,39 @@
+    * **(15 points)** Sphere (centered at the origin with radius 1):
+
+            $$F(x,y,z) = x^2 + y^2 + z^2 - 1$$
+
+    * **(15 points)** Plane (the *xy* plane, also known as the
+*z* = 0 plane)
+
+            $$F(x,y,z) = z$$
+
+    * **(15 points)** Cylinder (bottom at the origin, top at (0,0,1), radius 1)
+with a top and bottom cap (circles with radius 1 at z=0 and z=1).
+You handle this as a collection of three shapes with conditions:
+
+        $$\begin{align}
+        F\_\text{body}(x,y,z) &= x^2 + y^2 - 1 & \text{if}&\quad 0<z<1 \\\\
+        F\_\text{top}(x,y,z) &= z - 1 & \text{if}&\quad x^2+y^2 < 1 \\\\
+        F\_\text{bottom}(x,y,z) &= -z & \text{if}&\quad x^2+y^2 < 1
+        \end{align}$$
+
+    * **(15 points)** Cone (bottom at the origin, top at (0,0,1), radius 1 at
+the bottom, radius 0 at the top, with a bottom cap).
+You handle this as a collection of two shapes with conditions:
+    
+        $$\begin{align}
+        F\_\text{body}(x,y,z) &= x^2 + y^2 - (1-z)^2 & \text{if}&\quad 0<z \leq 1 \\\\
+        F\_\text{bottom}(x,y,z) &= -z & \text{if}&\quad x^2+y^2 < 1
+        \end{align}$$
+
+    * **(15 points)** Cube (centered at the origin, with vertices
+( ±1, ±1, ±1)$). Think of it as six planes:
+
+        $$\begin{align}
+        F\_\text{right}(x,y,z)  &= x-1    & \text{if}&\quad -1 \leq y,z \leq 1 \\\\
+        F\_\text{left}(x,y,z)   &= -(x+1) & \text{if}&\quad -1 \leq y,z \leq 1 \\\\
+        F\_\text{top}(x,y,z)    &= y-1    & \text{if}&\quad -1 \leq x,z \leq 1 \\\\
+        F\_\text{bottom}(x,y,z) &= -(y+1) & \text{if}&\quad -1 \leq x,z \leq 1 \\\\
+        F\_\text{front}(x,y,z)  &= z-1    & \text{if}&\quad -1 \leq x,y \leq 1 \\\\
+        F\_\text{back}(x,y,z)   &= -(z+1) & \text{if}&\quad -1 \leq x,y \leq 1
+        \end{align}$$
