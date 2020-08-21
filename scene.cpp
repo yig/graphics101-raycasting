@@ -7,13 +7,13 @@
 
 namespace graphics101 {
 
-void Scene::render( QImage& into_image ) {
+void Scene::render( Image& into_image ) {
     // Your code goes here.
 
     // Iterate over the pixels of the image. For each pixel:
     // 1. Use camera->getPixelUV() and camera->getRay() to create a ray3.
     // 2. Call rayColor() to get a vec3 color for that ray.
-    // 3. Use into_image.setPixel() to set the pixel color.
+    // 3. Use into_image.pixel() to set the pixel color.
 
 }
 

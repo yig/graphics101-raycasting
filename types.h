@@ -3,14 +3,14 @@
 
 // We could just do this to get everything glm supports,
 // but we're only using a subset so no need to slow down compile times.
-// #include <glm/glm.hpp>
+// #include "glm/glm.hpp"
 
-#include <glm/vec2.hpp>
-#include <glm/vec3.hpp>
-#include <glm/vec4.hpp>
-#include <glm/mat2x2.hpp> // glm::mat4
-#include <glm/mat3x3.hpp> // glm::mat4
-#include <glm/mat4x4.hpp> // glm::mat4
+#include "glm/vec2.hpp"
+#include "glm/vec3.hpp"
+#include "glm/vec4.hpp"
+#include "glm/mat2x2.hpp" // glm::mat4
+#include "glm/mat3x3.hpp" // glm::mat4
+#include "glm/mat4x4.hpp" // glm::mat4
 
 #include <vector>
 #include <string>

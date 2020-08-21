@@ -5,8 +5,7 @@
 #include <memory> // std::shared_ptr
 #include <unordered_map> // hash table aka std::unordered_map
 
-#include <QImage>
-
+#include "image.h"
 #include "types.h"
 #include "material.h"
 #include "light.h"
@@ -19,12 +18,12 @@ class Scene {
 public:
     bool parse( const std::string& path_to_file );
     
-    QImage render( int width, int height ) {
-        QImage result( width, height, QImage::Format_ARGB32 );
+    Image render( int width, int height ) {
+        Image result( width, height );
         render( result );
         return result;
     }
-    void render( QImage& into_image );
+    void render( Image& into_image );
 
 protected:
     // Returns true and fills out `hit_out` if the ray intersects an object with t>=0.
@@ -42,7 +41,7 @@ public:
     CameraPtr camera;
     std::vector< ShapePtr > shapes;
     std::vector< Light > lights;
-    std::unordered_map< std::string, QImage > textures;
+    std::unordered_map< std::string, Image > textures;
     
     std::unordered_map< std::string, mat4 > transforms;
     std::unordered_map< std::string, Material > materials;

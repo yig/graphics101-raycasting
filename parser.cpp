@@ -1,15 +1,15 @@
 #include "scene.h"
 
 // Some cross-platform path stuff.
-// When we can assume C++17, we can use std::filesystem.
-#include <QDir>
+// We assume C++17, so we can use std::filesystem.
+#include <filesystem>
 
 // textures
-#include <QImage>
+#include "image.h"
 
 // Include all of glm here.
 #include "glm/glm.hpp"
-#include <glm/gtc/matrix_transform.hpp>
+#include "glm/gtc/matrix_transform.hpp"
 
 #include "debugging.h"
 
@@ -192,18 +192,14 @@ void parse_shapes( const json& j, Scene& scene ) {
 void parse_textures( const json& j, Scene& scene ) {
     // Iterate over object properties
     for( auto it = j.begin(); it != j.end(); ++it ) {
-        QImage image;
+        Image image;
         const std::string image_path = it.value().get<std::string>();
-        if( !image.load( image_path.c_str() ) ) {
+        if( !image.load( image_path ) ) {
             std::cerr << "Error loading image: " << image_path << '\n';
-            // We'll still store this QImage object in the dictionary of
+            // We'll still store this Image object in the dictionary of
             // textures so that we can "fail gracefully" and let the image
             // render with undefined.
         }
-        
-        // Ensure the image is ARGB format.
-        // TODO Q: What happens if the format is `Format_Invalid` due to a failed load?
-        if( image.format() != QImage::Format_ARGB32 ) image = image.convertToFormat( QImage::Format_ARGB32 );
         
         // Store the image.
         scene.textures[it.key()] = image;
@@ -229,18 +225,18 @@ void from_json( const json& j, Scene& scene ) {
 namespace {
 class PushDir {
 public:
-    PushDir( const std::string& path ) {
+    PushDir( const std::filesystem::path& path ) {
         // Save the current working directory.
-        m_oldPath = QDir::currentPath();
+        m_old_path = std::filesystem::current_path();
         // Set the current working directory to what the user asked.
-        QDir::setCurrent( QString( path.c_str() ) );
+        std::filesystem::current_path( path );
     }
     ~PushDir() {
         // Restore the current working directory.
-        QDir::setCurrent( m_oldPath );
+        std::filesystem::current_path( m_old_path );
     }
 private:
-    QString m_oldPath;
+    std::filesystem::path m_old_path;
 };
 }
 
@@ -252,7 +248,7 @@ bool Scene::parse( const std::string& path_to_file ) {
     // There may be relative paths in the JSON. Temporarily set the current working
     // directory to the directory of the scene file.
     {
-        PushDir( QDir::toNativeSeparators( QFileInfo( QString( path_to_file.c_str() ) ).dir().path() ).toStdString() );
+        PushDir( std::filesystem::path( path_to_file ).parent_path() );
         *this = j;
     }
     return true;

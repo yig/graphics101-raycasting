@@ -35,9 +35,9 @@ int main( int argc, char* argv[] ) {
     scene.camera->imageDimensionsWithLongEdge( long_edge_pixels, width, height );
     assert( width > 0 );
     assert( height > 0 );
-    QImage image = scene.render( width, height );
+    Image image = scene.render( width, height );
     
-    image.save( outpath.c_str() );
+    image.save( outpath );
     std::cout << "Saved: " << outpath << std::endl;
     
     return 0;
