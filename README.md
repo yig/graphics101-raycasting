@@ -39,7 +39,7 @@ Getting Started & Handing In:
 
 * Follow the instructions to install a working development environment: <https://github.com/yig/graphics101> . You do not need to install Qt or any other external libraries for this assignment.
 
-* The program is a command line program. The framework and included glm vector math library provide all the support code that you need.
+* The program is a command line program. The framework and included `glm` vector math library provide all the support code that you need.
 
 * The code will be written in C++. This time, the project is more complex
 and you will see and need to use more of the language, including the
