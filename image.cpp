@@ -11,7 +11,8 @@ GitHub: https://github.com/yig/yimg
 #include <stdlib.h> // malloc, free, realloc
 
 #include <string>
-#include <algorithm> // tolower, copy
+#include <algorithm> // copy
+#include <cctype> // tolower
 #include <utility> // move
 
 
