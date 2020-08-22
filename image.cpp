@@ -55,6 +55,11 @@ Image::Image( const Image& rhs )
 	*this = rhs;
 }
 
+Image::Image( Image&& rhs )
+{
+    *this = std::move( rhs );
+}
+
 Image::Image( int width_, int height_ )
     : m_width( width_ ), m_height( height_ )
 {

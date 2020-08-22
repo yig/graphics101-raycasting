@@ -25,6 +25,8 @@ public:
     Image();
     // Create a copy of another Image.
 	Image( const Image& );
+	// Create a "copy" of another Image more efficiently when the other image is a temporary value.
+	Image( Image&& );
 	// Create an image with undefined contents. Use .fill() to set a color.
 	Image( int width, int height );
 	// Create an image from memory.
