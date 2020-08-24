@@ -91,9 +91,10 @@ helping you (not by giving your their code!).
 
 * When done, zip your entire `raycasting` directory, including your `Notes.txt`
 and the `test/` subdirectory containing the scenes and your program's output on
-them with the `long_edge_pixels` command line parameter set to 600. Name the zip
-file `hw02_lastname_firstname.zip`. Upload your solution to Blackboard before
-the deadline.
+them with the `long_edge_pixels` command line parameter set to 600.
+Do not include your `build` directory. It is large and unnecessary.
+Name the zip file `hw02_lastname_firstname.zip`. Upload your solution
+to Blackboard before the deadline.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
