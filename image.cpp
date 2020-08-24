@@ -320,7 +320,9 @@ const
     assert( m_width > 0 && m_height > 0 );
     
     std::string extension = os_path_splitext( fname ).second;
-    std::transform( extension.begin(), extension.end(), extension.begin(), std::tolower );
+    // ::tolower instead of std::tolower because MingW doesn't find std::tolower.
+    // More: https://sourceforge.net/p/mingw/mailman/mingw-users/thread/elbtvatk.fsf%40wanadoo.es/
+    std::transform( extension.begin(), extension.end(), extension.begin(), ::tolower );
     
     bool success = false;
     if( extension == ".png" ) {
