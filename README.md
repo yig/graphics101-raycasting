@@ -241,9 +241,10 @@ For this raycasting assignment, you only must fill in the `.t` and the
 assign it from the `Shape`'s `material()` method. Note that for the next
 assignment, you will have to fill out the rest of the fields. There's no
 harm getting a head-start now. The `.position` and `.normal` fields should
-be stored in world-space, so use your t with the world-space ray's
-position and direction and multiply the normal by
-`transpose(transformInverse())`.
+be stored in world-space. The incoming ray is in world-space, so use your
+t with the world-space ray's position and direction to get a world-space
+position. Transform the object-space normal by `transpose(transformInverse())`
+to get a world-space normal.
 
 C++ you need to know for this assignment
 ----------------------------------------
