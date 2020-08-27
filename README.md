@@ -306,7 +306,7 @@ Support code functions you need for this assignment
 
 **Image.** The method `image.pixel(x,y) = c` to set the pixel x,y of an
 `Image` image to a `ColorRGBA8` color c. To get the width and height of the
-image, use `image.width()` and `image.height()`.
+image, use `image.width()` and `image.height()`. The top left pixel is (0,0), not the bottom left pixel.
 
 **ColorRGBA8.** To create an RGB `ColorRGBA8` color, use `ColorRGBA8( red, green, blue )`.
 Each of the parameters should be an integer number in the range
