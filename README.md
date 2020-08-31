@@ -202,7 +202,7 @@ The code
 The code for a raycaster/raytracer can actually be quite compact. Here
 is a walkthrough. When the program launches (`main.cpp`), the `main()`
 function creates a `Scene` object. The scene parses the `.json` input file
-(`parser.cpp`). The `main()` function then creates a `QImage` to store the
+(`parser.cpp`). The `main()` function then creates an `Image` to store the
 rendering result, and passes it to `scene.render()`. The code for
 `Scene::render()` is in `scene.cpp`. You will fill in `Scene::render()` and
 its helper methods:
