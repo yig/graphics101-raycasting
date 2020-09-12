@@ -236,6 +236,16 @@ information about the intersection. Return `true` if an intersection
 occurs and `false` otherwise. Remember that the incoming ray's point `.p`
 and direction `.d` are in world-space. Convert them into object-space by
 multiplying them by `Shape`'s method `transformInverse()`.
+Transformation matrices are 4x4, since they make use of
+homogeneous coordinates to perform translation.
+The homogeneous coordinate of a point should be 1,
+since points have fixed positions that should be translated.
+The homogeneous coordinate of a vector should be 0,
+since vectors do not have fixed positions in space and so
+translation is a no-op. (Imagine a vector `<1,0,0>`
+pointing along the x-axis. Translating it by `<-2,0,0>` should do nothing;
+adding the translation would result in the vector `<-1,0,0>`, which is
+the opposite of correct.)
 
 For this raycasting assignment, you only must fill in the `.t` and the
 `.material` fields of `hit_out`. To fill out the `.material` field, simply
