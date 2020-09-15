@@ -188,6 +188,12 @@ You handle this as a collection of two shapes with conditions:
     * **(bonus 25 points)** Mesh (arbitrary triangle meshes)
 
         * Intersect with all triangles of the mesh. None of the demo scene files use this, so you’ll have to create your own.
+        The `Mesh` class stores a triangle mesh. A triangle has three corners. At each corner there is a position and possibly also a normal and texture coordinate. So there are three corresponding arrays, `face_positions`, `face_normals`, and `face_texcoords`. (If the mesh has normals or texture coordinates, then `face_normals` or `face_texcoords` will be the same length as `face_positions`. If it doesn't, their length will be 0.) Each element in these arrays stores three integer indices, one for each corner of the triangle. The indices tell you where to look in the `positions`, `normals`, and `texcoords` arrays for the 3D position, 3D normal, and 2D texture coordinates at that corner. Putting this all together, you can access the 3D positions for the three corners of the `i`-th triangle like this:
+
+                const vec3 p0 = face_positions[i][0];
+                const vec3 p1 = face_positions[i][1];
+                const vec3 p2 = face_positions[i][2];
+
 
 * **(5 points)** An example scene file. Note that `defaults.json` is not a
 real example, it just contains sample parameters (matching what the
