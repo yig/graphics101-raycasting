@@ -140,7 +140,7 @@ bool Mesh::loadFromOBJ( const std::string& path ) {
             }
             for( int i = 2; i < vb.size(); ++i ) {
                 // Add the position face.
-                face_positions.emplace_back( vb[0].v, vb[i-1].v, vb[i].v );
+                face_positions.emplace_back( Triangle{ vb[0].v, vb[i-1].v, vb[i].v } );
                 
                 // If one vertex bundle has normals or texcoords,
                 // they all must have normals/texcoords.
@@ -152,11 +152,11 @@ bool Mesh::loadFromOBJ( const std::string& path ) {
                 assert( ( vb[0].vt == -1 ) == ( vb[i].vt == -1 ) );
                 
                 if( vb[0].vn != -1 ) {
-                    face_normals.emplace_back( vb[0].vn, vb[i-1].vn, vb[i].vn );
+                    face_normals.emplace_back( Triangle{ vb[0].vn, vb[i-1].vn, vb[i].vn } );
                 }
                 
                 if( vb[0].vt != -1 ) {
-                    face_texcoords.emplace_back( vb[0].vt, vb[i-1].vt, vb[i].vt );
+                    face_texcoords.emplace_back( Triangle{ vb[0].vt, vb[i-1].vt, vb[i].vt } );
                 }
             }
         }

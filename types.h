@@ -13,6 +13,7 @@
 #include "glm/mat4x4.hpp" // glm::mat4
 
 #include <vector>
+#include <array>
 #include <string>
 
 #include <cassert>
@@ -43,7 +44,7 @@ namespace graphics101 {
         ray3( const vec3& a_p, const vec3& a_d ) : p( a_p ), d( a_d ) {}
     };
     
-    typedef ivec3 Triangle;
+    typedef std::array< int, 3 > Triangle;
     typedef std::vector< Triangle > TriangleVec;
     
     typedef std::string string;

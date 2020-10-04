@@ -154,7 +154,7 @@ Scene::ShapePtr parse_shape( const json& j, Scene& scene ) {
         shape = std::make_shared< Cube >();
     } else if( type == "mesh" ) {
         Mesh* mesh = new Mesh();
-        mesh->loadFromOBJ( j["path"] );
+        mesh->loadFromOBJ( resolve_path( j["path"] ) );
         shape.reset( mesh );
     } else {
         std::cerr << "Unknown shape type: " << type << '\n';
