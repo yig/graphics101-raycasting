@@ -1,9 +1,10 @@
 #include "scene.h"
+#include "debugging.h"
 
 // Include all of glm here.
 #include "glm/glm.hpp"
 
-#include "debugging.h"
+using namespace glm;
 
 namespace graphics101 {
 

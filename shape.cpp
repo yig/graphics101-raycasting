@@ -5,6 +5,8 @@
 #include <vector>
 #include <cmath> // std::sqrt()
 
+using namespace glm;
+
 namespace graphics101 {
 
 bool Sphere::rayIntersect( const ray3& ray, Intersection& hit_out ) const {

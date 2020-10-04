@@ -5,6 +5,8 @@
 #include <cmath> // fabs()
 #include <algorithm> // std::max()
 
+using namespace glm;
+
 namespace graphics101 {
 
 ray3 CameraPerspective::getRay( const vec2& uv ) const {
