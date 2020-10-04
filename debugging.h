@@ -38,10 +38,6 @@ inline std::ostream& operator<<( std::ostream& out, const mat3& m ) {
     out << "mat3( " << m[0] << ", " << m[1] << ", " << m[2] << ", " << " )";
     return out;
 }
-inline std::ostream& operator<<( std::ostream& out, const Triangle& t ) {
-    out << "Triangle( " << t[0] << ", " << t[1] << ", " << t[2] << " )";
-    return out;
-}
 
 }
 
