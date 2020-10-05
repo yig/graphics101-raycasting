@@ -38,9 +38,9 @@ void set_path_prefix( const std::string& path_to_json ) {
 #endif
         );
     // If there are no directory separators, then `path_to_json` is in the
-    // current working directory. We don't need a prefix.
+    // current working directory.
     if( found == std::string::npos ) {
-        PATH_PREFIX = "";
+        PATH_PREFIX = "./";
         return;
     }
     
