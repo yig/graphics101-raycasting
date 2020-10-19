@@ -12,9 +12,11 @@ struct ColorRGBA8 {
     uint8_t b;
     uint8_t a;
     
-    // Alpha defaults to opaque.
+    // When specifying a color, alpha defaults to opaque.
     ColorRGBA8( uint8_t red, uint8_t green, uint8_t blue, uint8_t alpha = 255 )
         : r( red ), g( green ), b( blue ), a( alpha ) {}
+    // By default, a color is transparent black.
+    ColorRGBA8() : r(0), g(0), b(0), a(0) {}
 };
 
 class Image
@@ -27,8 +29,10 @@ public:
 	Image( const Image& );
 	// Create a "copy" of another Image more efficiently when the other image is a temporary value.
 	Image( Image&& );
-	// Create an image with undefined contents. Use .fill() to set a color.
+	// Create an image with undefined contents. Use .fill() or the next constructor to set a color.
 	Image( int width, int height );
+	// Create an image filled with the given pixel color.
+	Image( int width, int height, ColorRGBA8 color );
 	// Create an image from memory.
 	Image( const ColorRGBA8* data, int width, int height );
 	// Create an image from memory with extra padding between rows.

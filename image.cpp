@@ -74,6 +74,12 @@ Image::Image( int width_, int height_ )
     m_data = reinterpret_cast<ColorRGBA8*>( malloc( width_ * height_ * sizeof(ColorRGBA8) ) );
 }
 
+Image::Image( int width_, int height_, ColorRGBA8 color )
+    : Image( width_, height_ )
+{
+    fill( color );
+}
+
 Image::Image( const ColorRGBA8* data, int width, int height )
     : Image::Image( width, height )
 {
