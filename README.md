@@ -291,7 +291,7 @@ to worry about freeing memory or memory leaks.
 ---------------------------------------------------------------------
 
 **glm.** This assignment makes heavy use of the `glm` library for vector
-math. This library matches GLSL (OpenGL Shading Language), so substitute
+math. This library matches [GLSL (OpenGL Shading Language)](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language), so substitute
 the keyword GLSL for glm when searching for documentation. You will make
 heavy use of `vec4`, `vec3`, `vec2`, `mat4`, possibly `mat3`, and functions like
 `dot(v1,v2)`, `inverse(m)`, `transpose(m)`, and `clamp(v, min_value, max_value)`.
