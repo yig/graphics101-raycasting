@@ -17,8 +17,6 @@ computing a color for the ray.
 (You will add illumination in the follow-up assignment,
 [raytracing](https://github.com/yig/graphics101-raytracing).)
 
-Background reading for this assignment: Chapter 4 *Ray Tracing* and Chapter 13.2 *Instancing* from *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley.
-
 Goals:
 ------
 
@@ -31,6 +29,12 @@ geometric calculations.
 available when programming for a GPU).
 
 * Become more comfortable with C++.
+
+Background:
+-------
+
+* Book (FoCG,4e): Chapter 4 *Ray Tracing* and Chapter 13.2 *Instancing*. (FoCG,4e is *Fundamentals of Computer Graphics (4th edition)* by Steve Marschner and Peter Shirley.)
+* Video: "Lecture 3: Transformations", "Lecture 4: Raycasting", and "Assignment 2: Raycasting"
 
 Getting Started & Handing In:
 -----------------------------
