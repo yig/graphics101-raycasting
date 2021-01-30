@@ -78,8 +78,6 @@ great debugger interface.
 
 * Create a `.json` scene yourself. Copy it and a `.png` rendering of it into the `output/` subdirectory as well.
 
-* Check your work with the [autograder](https://github.com/yig/graphics101-raycasting-autograder).
-
 * You are encouraged to share blooper images you create while implementing the assignment on Piazza.
 
 * Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
