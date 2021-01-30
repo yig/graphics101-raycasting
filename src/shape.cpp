@@ -9,7 +9,10 @@ using namespace glm;
 
 namespace graphics101 {
 
-bool Sphere::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
+bool Sphere::rayIntersect( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
@@ -17,10 +20,13 @@ bool Sphere::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
     // When filling out `hit_out`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
     
-    return false;
+    return result;
 }
 
-bool Plane::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
+Intersection Plane::rayIntersect( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
@@ -28,10 +34,13 @@ bool Plane::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
     // When filling out `hit_out`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
     
-    return false;
+    return result;
 }
 
-bool Cylinder::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
+Intersection Cylinder::rayIntersect( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
@@ -39,10 +48,13 @@ bool Cylinder::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
     // When filling out `hit_out`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
-    return false;
+    return result;
 }
 
-bool Cone::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
+Intersection Cone::rayIntersect( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
@@ -50,10 +62,13 @@ bool Cone::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
     // When filling out `hit_out`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
-    return false;
+    return result;
 }
 
-bool Cube::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
+Intersection Cube::rayIntersect( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
@@ -61,10 +76,13 @@ bool Cube::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
     // When filling out `hit_out`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
-    return false;
+    return result;
 }
 
-bool Mesh::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
+Intersection Mesh::rayIntersect( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
@@ -72,7 +90,7 @@ bool Mesh::rayIntersect( const ray3& ray, Intersection& hit_out ) const {
     // When filling out `hit_out`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
-    return false;
+    return result;
 }
 
 }

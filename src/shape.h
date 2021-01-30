@@ -8,10 +8,11 @@
 namespace graphics101 {
 
 struct Intersection {
-    real t{ -31337 };
-    vec3 position{ -31337, -31337, -31337 };
-    vec3 normal{ -31337, -31337, -31337 };
-    vec2 texCoord{ -31337, -31337 };
+    bool valid{ false }; // An intersection occurs only if `valid` is true.
+    real t{ -31337 }; // t along the ray
+    vec3 position{ -31337, -31337, -31337 }; // world-space position
+    vec3 normal{ -31337, -31337, -31337 }; // world-space normal
+    vec2 texCoord{ -31337, -31337 }; // texture coordinates
     Material material;
 };
 
@@ -19,11 +20,12 @@ class Shape {
 public:
     virtual ~Shape() {}
     
-    // If there was no intersection, returns false.
-    // If there was an intersection, returns true and fills out Intersection.
+    // If there was no intersection, the returned `Intersection.valid = false`.
+    // If there was an intersection, the returned `Intersection.valid = true`
+    // and the Intersection's fields are filled out.
     // This is the only function needed by a raytracer.
     // Subclasses override this to define the shape.
-    virtual bool rayIntersect( const ray3& ray, Intersection& hit_out ) const = 0;
+    virtual Intersection rayIntersect( const ray3& ray ) const = 0;
     
 // Public but only used by subclasses or someone creating a scene.
 public:
@@ -55,32 +57,32 @@ private:
 
 class Sphere : public Shape {
 public:
-    bool rayIntersect( const ray3& ray, Intersection& hit_out ) const override;
+    Intersection rayIntersect( const ray3& ray ) const override;
 };
 
 class Plane : public Shape {
 public:
-    bool rayIntersect( const ray3& ray, Intersection& hit_out ) const override;
+    Intersection rayIntersect( const ray3& ray ) const override;
 };
 
 class Cylinder : public Shape {
 public:
-    bool rayIntersect( const ray3& ray, Intersection& hit_out ) const override;
+    Intersection rayIntersect( const ray3& ray ) const override;
 };
 
 class Cone : public Shape {
 public:
-    bool rayIntersect( const ray3& ray, Intersection& hit_out ) const override;
+    Intersection rayIntersect( const ray3& ray ) const override;
 };
 
 class Cube : public Shape {
 public:
-    bool rayIntersect( const ray3& ray, Intersection& hit_out ) const override;
+    Intersection rayIntersect( const ray3& ray ) const override;
 };
 
 class Mesh : public Shape {
 public:
-    bool rayIntersect( const ray3& ray, Intersection& hit_out ) const override;
+    Intersection rayIntersect( const ray3& ray ) const override;
 
     // Clears the mesh and loads the OBJ file at `path`.
     // Returns true upon success and false otherwise.

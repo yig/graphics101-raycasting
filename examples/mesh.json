@@ -1,0 +1,95 @@
+{
+    "camera": {
+        "type": "perspective",
+        "focal_length": 1,
+        "eye": [ 0,2,4 ],
+        "look": [ 0, -0.44721359549995793, -0.89442719099991586],
+        "up": [0, 0.89442719099991586, -0.44721359549995793],
+        "film_left": -0.25,
+        "film_right": 0.25,
+        "film_bottom": -0.25,
+        "film_top": 0.25
+    },
+    
+    "materials": [
+        {
+            "name": "sphere",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,1,0 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "cylinder",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 1,0,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": true,
+            "color_reflect": [ 0.1,0.1,0.1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        },
+        {
+            "name": "plane",
+            
+            "color_ambient": [ 0,0,0 ],
+            "color_diffuse": [ 0,0,1 ],
+            "color_specular": [ 1,1,1 ],
+            "shininess": 10,
+            
+            "reflective": false,
+            "color_reflect": [ 1,1,1 ],
+            
+            "refractive": false,
+            "color_refract": [ 1,1,1 ],
+            "index_of_refraction": 1
+        }
+    ],
+    
+    "lights": [
+        {
+            "position": [ 0,3,3,1 ],
+            "color": [ 1,1,1 ],
+            "color_ambient": [ 1,1,1 ]
+        }
+    ],
+    
+    "transforms": [
+        {
+            "name": "identity",
+            "matrix": [ [ 1,0,0,0 ], [ 0,1,0,0 ], [ 0,0,1,0 ], [ 0,0,0,1 ] ]
+        },
+        {
+            "name": "plane",
+            "translate": [ 0,-1,0 ],
+            "rotate": { "degrees": -90, "axis": [ 1,0,0 ] }
+        }
+    ],
+    
+    "shapes": [
+        {
+            "type": "mesh",
+            "path": "meshes/sphere.obj",
+            "transform": "plane",
+            "material": "sphere"
+        },
+        {
+            "type": "plane",
+            "transform": "plane",
+            "material": "plane"
+        }
+    ]
+}

@@ -26,9 +26,10 @@ public:
     void render( Image& into_image );
 
 protected:
-    // Returns true and fills out `hit_out` if the ray intersects an object with t>=0.
-    // Returns false otherwise.
-    bool closestIntersection( const ray3& ray, Intersection& hit_out ) const;
+    // Returns an `Intersection` with `.valid = true` and fills out the rest of its
+    // fields if the ray intersects an object with t>=0.
+    // Returns an `Intersection` with `.valid = false` otherwise.
+    Intersection closestIntersection( const ray3& ray ) const;
     // Returns the color along the ray.
     // `ray` is the ray along which the intersection will be obtained.
     // max_recursion is the maximum number of times to recurse.

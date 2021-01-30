@@ -18,16 +18,17 @@ void Scene::render( Image& into_image ) {
 
 }
 
-bool Scene::closestIntersection( const ray3& ray, Intersection& hit_out ) const {
+Intersection Scene::closestIntersection( const ray3& ray ) const {
+    // The Intersection constructor sets `.valid = false`
+    Intersection result;
+    
     // Your code goes here.
-
+    
     // Iterate over all the shapes, calling rayIntersect() on each.
     // In C++, a nice iterator for loop can be written as:
     // for( const ShapePtr shape: shapes ) { ... shape->rayIntersect( ... ) ... }
-    // You will need to create another Intersection struct
-    // to pass to each shape's rayIntersect().
     
-    return false;
+    return result;
 }
 vec3 Scene::rayColor( const ray3& ray, int max_recursion ) const {
     // Your code goes here.

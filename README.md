@@ -72,17 +72,11 @@ directory" to the `examples` subdirectory, or else copy
 * Build and run and test that it is working correctly. Qt Creator has a
 great debugger interface.
 
-* Create 600 pixel images for each of the following `.json` scenes. Copy the
-`.json` and your `.png` files into a new `test/` subdirectory.
+* Check your work with the [autograder](https://github.com/yig/graphics101-raycasting-autograder).
 
-    * `spheres_cylinder.json`
-    * `cone_cube.json`
-    * `stress_test.json`
-    * `camera_test1.json`
-    * `camera_test2.json`
-    * `orthographic_test1.json`
-    * `orthographic_test2.json`
-    * A `.json` scene that you make yourself
+* Copy the latest autograder output (`.html` file and associated directory) into a new `output/` subdirectory.
+
+* Create a `.json` scene yourself. Copy it and a `.png` rendering of it into the `output/` subdirectory as well.
 
 * Check your work with the [autograder](https://github.com/yig/graphics101-raycasting-autograder).
 
@@ -91,19 +85,18 @@ great debugger interface.
 * Create a file named `Notes.txt` in the folder. Describe any known issues or extra features. Name people in the class who deserve a star for
 helping you (not by giving your their code!).
 
-* When done, zip your entire `raycasting` directory, including your `Notes.txt`
-and the `test/` subdirectory containing the scenes and your program's output on
-them with the `long_edge_pixels` command line parameter set to 600.
-Do not include your `build` directory. It is large and unnecessary.
-Name the zip file `hw02_lastname_firstname.zip`. Upload your solution
-to Blackboard before the deadline.
+* When done, run the the `cpack` command from inside your build directory
+to generate an appropriate zip file of your `raycasting` project.
+The zip file it creates, `raycasting.zip`, will include
+the `output` subdirectory and your `Notes.txt` file.
+It will ignore unneeded large and numerous directories
+(e.g. `build`).
+Upload your `raycasting.zip` before the deadline.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
 permitted to consult with each other while working on this assignment,
-code that is substantially the same will be considered cheating.** In your
-`Notes.txt`, please note who deserves a star (who helped you with the
-assignment).
+code that is substantially the same will be considered cheating.**
 
 
 Rubric
@@ -239,9 +232,9 @@ You can find our derivations in `docs/Ray Shape Intersection Formula.txt`.
 You can find the pseudocode we created in class for the cylinder
 in `docs/raycasting_cylinder.py`.
 When you implement `rayIntersect()`,
-you must fill out the `Intersection& hit_out` output parameter with
-information about the intersection. Return `true` if an intersection
-occurs and `false` otherwise. Remember that the incoming ray's point `.p`
+you must return information about the intersection in an `Intersection` struct.
+Set `.valid = true` if an intersection
+occurs and `.valid = false` otherwise. Remember that the incoming ray's point `.p`
 and direction `.d` are in world-space. Convert them into object-space by
 multiplying them by `Shape`'s method `transformInverse()`.
 Transformation matrices are 4x4, since they make use of
@@ -255,8 +248,8 @@ pointing along the x-axis. Translating it by `<-2,0,0>` should do nothing;
 adding the translation would result in the vector `<-1,0,0>`, which is
 the opposite of correct.)
 
-For this raycasting assignment, you only must fill in the `.t` and the
-`.material` fields of `hit_out`. To fill out the `.material` field, simply
+For this raycasting assignment, you only must fill in the `.valid`, `.t`, and
+`.material` fields of the returned `Intersection`. To fill out the `.material` field, simply
 assign it from the `Shape`'s `material()` method. Note that for the next
 assignment, you will have to fill out the rest of the fields. There's no
 harm getting a head-start now. The `.position` and `.normal` fields should
@@ -291,7 +284,7 @@ to worry about freeing memory or memory leaks.
 ---------------------------------------------------------------------
 
 **glm.** This assignment makes heavy use of the `glm` library for vector
-math. This library matches [GLSL (OpenGL Shading Language)](https://www.khronos.org/opengl/wiki/OpenGL_Shading_Language), so substitute
+math. This library implements the [vector and matrix data types from the OpenGL Shading Language (GLSL)](https://www.khronos.org/opengl/wiki/Data_Type_(GLSL)), so substitute
 the keyword GLSL for glm when searching for documentation. You will make
 heavy use of `vec4`, `vec3`, `vec2`, `mat4`, possibly `mat3`, and functions like
 `dot(v1,v2)`, `inverse(m)`, `transpose(m)`, and `clamp(v, min_value, max_value)`.
