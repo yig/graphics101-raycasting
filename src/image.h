@@ -71,8 +71,9 @@ public:
 	ColorRGBA8* scanline( int row );
 	const ColorRGBA8* scanline( int row ) const;
 	
-	ColorRGBA8& pixel( int row, int column );
-	const ColorRGBA8& pixel( int row, int column ) const;
+	// Access the pixel data at location x,y
+	ColorRGBA8& pixel( int x, int y );
+	const ColorRGBA8& pixel( int x, int y ) const;
 	
 	int width() const;
 	int height() const;

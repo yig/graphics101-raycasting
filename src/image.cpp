@@ -146,21 +146,21 @@ const ColorRGBA8* Image::data() const { return m_data; }
 ColorRGBA8*       Image::scanline( int row )       { return m_data + row*m_width; }
 const ColorRGBA8* Image::scanline( int row ) const { return m_data + row*m_width; }
 
-ColorRGBA8& Image::pixel( int i, int j )
+ColorRGBA8& Image::pixel( int x, int y )
 {
-	assert( i >= 0 && i < m_width );
-	assert( j >= 0 && j < m_height );
+	assert( x >= 0 && x < m_width );
+	assert( y >= 0 && y < m_height );
 	
-	return m_data[ i + j * m_width ];
+	return m_data[ x + y * m_width ];
 }
 const ColorRGBA8&
-Image::pixel( int i, int j )
+Image::pixel( int x, int y )
 const
 {
-	assert( i >= 0 && i < m_width );
-	assert( j >= 0 && j < m_height );
+	assert( x >= 0 && x < m_width );
+	assert( y >= 0 && y < m_height );
 	
-	return m_data[ i + j * m_width ];
+	return m_data[ x + y * m_width ];
 }
 
 int Image::width() const
