@@ -28,6 +28,9 @@ set(SRCS
 
 add_executable(raycasting ${SRCS})
 target_include_directories(raycasting PUBLIC include)
+## On Windows, the following line may help build a static binary that can be called from the autograder:
+# target_link_libraries(raycasting -static)
+## Some platforms can't build entirely static binaries, so I'm leaving it off by default.
 target_link_libraries(raycasting)
 
 # Create the output directory and remember its location.
