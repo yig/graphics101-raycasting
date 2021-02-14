@@ -26,7 +26,7 @@ Intersection Scene::closestIntersection( const ray3& ray ) const {
     
     // Iterate over all the shapes, calling rayIntersect() on each.
     // In C++, a nice iterator for loop can be written as:
-    // for( const ShapePtr shape: shapes ) { ... shape->rayIntersect( ... ) ... }
+    // for( const ShapePtr& shape: shapes ) { ... shape->rayIntersect( ... ) ... }
     
     return result;
 }
