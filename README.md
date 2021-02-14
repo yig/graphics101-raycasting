@@ -239,6 +239,7 @@ Set `.valid = true` if an intersection
 occurs and `.valid = false` otherwise. Remember that the incoming ray's point `.p`
 and direction `.d` are in world-space. Convert them into object-space by
 multiplying them by `Shape`'s method `transformInverse()`.
+It should be matrix times vector, not vector times matrix.
 Transformation matrices are 4x4, since they make use of
 homogeneous coordinates to perform translation.
 The homogeneous coordinate of a point should be 1,
