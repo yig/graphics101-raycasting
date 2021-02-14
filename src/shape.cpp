@@ -16,7 +16,7 @@ Intersection Sphere::rayIntersect( const ray3& ray ) const {
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
-    // You convert the world-space ray to object-space by left-multiplying ray.p and ray.d by transformInverse().
+    // You convert the world-space ray to object-space by multiplying transformInverse() times ray.p and ray.d.
     // When filling out `result`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
     
@@ -30,7 +30,7 @@ Intersection Plane::rayIntersect( const ray3& ray ) const {
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
-    // You convert the world-space ray to object-space by left-multiplying ray.p and ray.d by transformInverse().
+    // You convert the world-space ray to object-space by multiplying transformInverse() times ray.p and ray.d.
     // When filling out `result`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
     
@@ -44,7 +44,7 @@ Intersection Cylinder::rayIntersect( const ray3& ray ) const {
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
-    // You convert the world-space ray to object-space by left-multiplying ray.p and ray.d by transformInverse().
+    // You convert the world-space ray to object-space by multiplying transformInverse() times ray.p and ray.d.
     // When filling out `result`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
@@ -58,7 +58,7 @@ Intersection Cone::rayIntersect( const ray3& ray ) const {
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
-    // You convert the world-space ray to object-space by left-multiplying ray.p and ray.d by transformInverse().
+    // You convert the world-space ray to object-space by multiplying transformInverse() times ray.p and ray.d.
     // When filling out `result`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
@@ -72,7 +72,7 @@ Intersection Cube::rayIntersect( const ray3& ray ) const {
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
-    // You convert the world-space ray to object-space by left-multiplying ray.p and ray.d by transformInverse().
+    // You convert the world-space ray to object-space by multiplying transformInverse() times ray.p and ray.d.
     // When filling out `result`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
@@ -86,7 +86,7 @@ Intersection Mesh::rayIntersect( const ray3& ray ) const {
     // Your code goes here.
 
     // Remember that this intersection occurs in object-space.
-    // You convert the world-space ray to object-space by left-multiplying ray.p and ray.d by transformInverse().
+    // You convert the world-space ray to object-space by multiplying transformInverse() times ray.p and ray.d.
     // When filling out `result`, don't forget to return the resulting position and normal in world-space.
     // For the normal, that means left-multiplying the object-space normal by transpose( transformInverse() ).
 
