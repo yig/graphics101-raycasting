@@ -92,8 +92,9 @@ to generate an appropriate zip file of your `raycasting` project.
 The zip file it creates, `raycasting.zip`, will include
 the `output` subdirectory and your `Notes.txt` file.
 It will ignore unneeded large and numerous directories
-(e.g. `build`).
+(e.g., `build` and `include`).
 Upload your `raycasting.zip` before the deadline.
+**If you try to upload a zip file with too many files in it, Gradescope will return error code 0.** Please use `cpack` or zip the directory without the `build` or `include` directories.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
