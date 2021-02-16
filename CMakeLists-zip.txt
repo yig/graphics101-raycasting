@@ -2,17 +2,16 @@
 
 # Version 1: A custom target named "zip". Run "make zip" or "cmake --build . --target zip"
 
-# add_custom_target(zip COMMAND
-#     ${CMAKE_COMMAND} -E tar "cfv" "${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}.zip" --format=zip
-#     ${SRCS}
-#     "Notes.txt"
-#     "CMakeLists.txt"
-#     "CMakeLists-zip.txt"
-#     "cmake"
-#     "${OUTPUT}"
-#     WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
-#     VERBATIM
-# )
+add_custom_target(zip COMMAND
+    ${CMAKE_COMMAND} -E tar "cfv" "${CMAKE_BINARY_DIR}/${CMAKE_PROJECT_NAME}.zip" --format=zip
+    ${SRCS}
+    "Notes.txt"
+    "CMakeLists.txt"
+    "CMakeLists-zip.txt"
+    "${OUTPUT}"
+    WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
+    VERBATIM
+)
 
 # Version 2: Describe the package to create. Run "make package" or "cpack".
 
@@ -37,6 +36,6 @@ install(DIRECTORY "${OUTPUT}"
 set(CPACK_CMAKE_GENERATOR Ninja)
 set(CPACK_GENERATOR "ZIP")
 set(CPACK_PACKAGE_FILE_NAME "${CMAKE_PROJECT_NAME}")
-set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY ON)
+set(CPACK_INCLUDE_TOPLEVEL_DIRECTORY OFF)
 set(CPACK_VERBATIM_VARIABLES YES)
 include(CPack)
