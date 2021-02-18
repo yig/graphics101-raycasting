@@ -151,14 +151,14 @@ color of the closest intersected object.
 * **(75 points)** Intersections. The `Shape` subclasses' `rayIntersect()`
 methods:
 
-    * **(15 points)** Sphere (centered at the origin with radius 1):
-
-        * F(x,y,z) = x² + y² + z² - 1
-
     * **(15 points)** Plane (the *xy* plane, also known as the
 *z* = 0 plane)
 
         * F(x,y,z) = z
+
+    * **(15 points)** Sphere (centered at the origin with radius 1):
+
+        * F(x,y,z) = x² + y² + z² - 1
 
     * **(15 points)** Cylinder (bottom at the origin, top at (0,0,1), radius 1)
 with a top and bottom cap (circles with radius 1 at z=0 and z=1).

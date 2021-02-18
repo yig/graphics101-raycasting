@@ -14,9 +14,6 @@ ray3 CameraPerspective::getRay( const vec2& uv ) const {
     // Your code goes here.
 
     // Create a ray3( ray origin point, ray direction ).
-    // Since you will be testing for intersections along the ray,
-    // you may want to start the ray on the film plane so that objects
-    // between the eye() and the film plane aren't drawn.
     
     // The Camera has `vec3` instance variables e,u,v,w, so you
     // can write an expression that looks very similar to the one

@@ -9,7 +9,7 @@ namespace graphics101 {
 
 struct Intersection {
     bool valid{ false }; // An intersection occurs only if `valid` is true.
-    real t{ -31337 }; // t along the ray
+    real t{ inifinity }; // t along the ray
     vec3 position{ -31337, -31337, -31337 }; // world-space position
     vec3 normal{ -31337, -31337, -31337 }; // world-space normal
     vec2 texCoord{ -31337, -31337 }; // texture coordinates
@@ -55,12 +55,12 @@ private:
     std::string m_material_name;
 };
 
-class Sphere : public Shape {
+class Plane : public Shape {
 public:
     Intersection rayIntersect( const ray3& ray ) const override;
 };
 
-class Plane : public Shape {
+class Sphere : public Shape {
 public:
     Intersection rayIntersect( const ray3& ray ) const override;
 };

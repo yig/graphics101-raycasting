@@ -1,16 +1,5 @@
 # Ray Shape Intersection Formula
 
-## Sphere
-
-For the unit sphere F(x,y,z) = x^2 + y^2 + z^2 - 1, the ray p+t*d intersects when the quadratic expression a*t^2 + b*t + c = 0, with
-
-a = dx^2 + dy^2 + dz^2  
-b = 2*( px*dx + py*dy + pz*dz )  
-c = px^2 + py^2 + pz^2 - 1.0
-
-The normal to this sphere is < 2*x, 2*y, 2*z >, where x,y,z are a point on the sphere.
-
-
 ## Plane
 
 For the plane F(x,y,z) = z, the ray p+t*d intersects when the linear expression b*t + c = 0, with
@@ -22,6 +11,15 @@ This has one solution t. If t is negative, it is invalid (no intersection).
 
 The normal to this plane is < 0, 0, 1 >.
 
+## Sphere
+
+For the unit sphere F(x,y,z) = x^2 + y^2 + z^2 - 1, the ray p+t*d intersects when the quadratic expression a*t^2 + b*t + c = 0, with
+
+a = dx^2 + dy^2 + dz^2  
+b = 2*( px*dx + py*dy + pz*dz )  
+c = px^2 + py^2 + pz^2 - 1.0
+
+The normal to this sphere is < 2*x, 2*y, 2*z >, where x,y,z are a point on the sphere.
 
 ## Cylinder
 

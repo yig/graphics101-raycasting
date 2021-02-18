@@ -9,7 +9,7 @@ using namespace glm;
 
 namespace graphics101 {
 
-Intersection Sphere::rayIntersect( const ray3& ray ) const {
+Intersection Plane::rayIntersect( const ray3& ray ) const {
     // The Intersection constructor sets `.valid = false`
     Intersection result;
     
@@ -23,7 +23,7 @@ Intersection Sphere::rayIntersect( const ray3& ray ) const {
     return result;
 }
 
-Intersection Plane::rayIntersect( const ray3& ray ) const {
+Intersection Sphere::rayIntersect( const ray3& ray ) const {
     // The Intersection constructor sets `.valid = false`
     Intersection result;
     
