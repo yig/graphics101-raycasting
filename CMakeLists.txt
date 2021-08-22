@@ -1,6 +1,6 @@
-cmake_minimum_required(VERSION 3.2)
+cmake_minimum_required(VERSION 3.14)
 
-project(raycasting)
+project(raycasting LANGUAGES CXX C)
 
 # We want C++11
 set (CMAKE_CXX_STANDARD 11)
@@ -26,12 +26,17 @@ set(SRCS
     src/types.h
     )
 
+include(cmake/CPM.cmake)
+CPMAddPackage("https://github.com/g-truc/glm.git#0.9.9.8")
+## This is a single header file. Let's just put it in our "include" folder directly.
+# CPMAddPackage("https://github.com/nlohmann/json.git@3.9.1")
+
 add_executable(raycasting ${SRCS})
 target_include_directories(raycasting PUBLIC include)
 ## On Windows, the following line may help build a static binary that can be called from the autograder:
 # target_link_libraries(raycasting -static)
 ## Some platforms can't build entirely static binaries, so I'm leaving it off by default.
-target_link_libraries(raycasting)
+target_link_libraries(raycasting glm::glm)
 
 # Create the output directory and remember its location.
 set(OUTPUT "${PROJECT_SOURCE_DIR}/output")

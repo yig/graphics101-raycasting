@@ -99,7 +99,7 @@ It will ignore unneeded large and numerous directories
 Upload your `raycasting.zip` before the deadline.
 **If you try to upload a zip file with too many files in it, Gradescope will return error code 0.**
 (If you can't use `cpack`, try `make zip` or `cmake --build . --target zip`)
-If you create a zip file manually, zip your project without the `build` or `include` directories.
+If you create a zip file manually, zip your project without the `build` directory.
 
 * **THIS IS AN INDIVIDUAL, NOT A GROUP ASSIGNMENT. That means all code
 written for this assignment should be original! Although you are
