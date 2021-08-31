@@ -117,8 +117,8 @@ Rubric
         * Return a world-space ray through the pixel located at (*u,v*) on the
 film plane. A point (*u,v*) on the film plane is located at
 **e** + *u* **u** + *v* **v** - *d* **w** in world-space.
-Your ray can emanate from the eye **e** itself or from the film
-plane point. The world-space direction of the rays is the direction from
+Your ray should emanate from the eye **e** itself.
+The world-space direction of the ray is the direction from
 the eye **e** through the aforementioned film plane point:
 *u* **u** + *v* **v** - *d* **w**.
 
