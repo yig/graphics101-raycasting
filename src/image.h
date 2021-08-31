@@ -3,6 +3,7 @@
 
 #include <cstdint> // uint8_t
 #include <string>
+#include <vector>
 
 namespace graphics101
 {
@@ -23,13 +24,9 @@ class Image
 {
 public:
     // An empty constructor creates an empty image with width and height set to 0
-    // and data set to nullptr.
-    Image();
-    // Create a copy of another Image.
-	Image( const Image& );
-	// Create a "copy" of another Image more efficiently when the other image is a temporary value.
-	Image( Image&& );
-	// Create an image with undefined contents. Use .fill() or the next constructor to set a color.
+    // no data.
+    Image() = default;
+    // Create an image with undefined contents. Use .fill() or the next constructor to set a color.
 	Image( int width, int height );
 	// Create an image filled with the given pixel color.
 	Image( int width, int height, ColorRGBA8 color );
@@ -38,13 +35,6 @@ public:
 	// Create an image from memory with extra padding between rows.
 	// The first pixel of each row is separated by pixels_per_row pixels.
 	Image( const ColorRGBA8* data, int width, int height, int pixels_per_row );
-	
-	~Image();
-	
-	// Assignment constructor
-	Image& operator=( const Image& );
-	// Move operator
-	Image& operator=( Image&& rhs );
 	
 	// Returns true if the images are the same size and have the same data (for r,g,b,a).
 	bool same( const Image& rhs ) const;
@@ -94,7 +84,7 @@ public:
 protected:
 	int m_width = 0;
 	int m_height = 0;
-	ColorRGBA8* m_data = nullptr; // raw image data
+	std::vector<ColorRGBA8> m_data; // raw image data
 };
 }
 
