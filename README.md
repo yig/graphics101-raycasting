@@ -79,7 +79,7 @@ directory" to the `examples` subdirectory, or else copy
 * Build and run and test that it is working correctly. Qt Creator has a
 great debugger interface.
 
-* Check your work with the command line tests by running `ctest --verbose`. This will test that your camera is working correctly.
+* Check your work with the command line tests by running `ctest --verbose`. This will test whether your camera is working correctly. If your camera is not working correctly, nothing else will render correctly.
 
 * Check your work with the [autograder](https://github.com/yig/graphics101-raycasting-autograder).
 
