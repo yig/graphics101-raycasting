@@ -79,6 +79,8 @@ directory" to the `examples` subdirectory, or else copy
 * Build and run and test that it is working correctly. Qt Creator has a
 great debugger interface.
 
+* Check your work with the command line tests by running `ctest --verbose`. This will test that your camera is working correctly.
+
 * Check your work with the [autograder](https://github.com/yig/graphics101-raycasting-autograder).
 
 * Copy the latest autograder output (`.html` file and associated directory) into a new `output/` subdirectory.
