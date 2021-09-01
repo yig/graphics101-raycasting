@@ -25,7 +25,6 @@ public:
     }
     void render( Image& into_image );
 
-protected:
     // Returns an `Intersection` with `.valid = true` and fills out the rest of its
     // fields if the ray intersects an object with t>=0.
     // Returns an `Intersection` with `.valid = false` otherwise.
@@ -35,7 +34,6 @@ protected:
     // max_recursion is the maximum number of times to recurse.
     vec3 rayColor( const ray3& ray, int max_recursion = 0 ) const;
     
-public:
     typedef std::shared_ptr< Camera > CameraPtr;
     typedef std::shared_ptr< Shape > ShapePtr;
 
