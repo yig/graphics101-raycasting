@@ -60,6 +60,23 @@ TEST_CASE( "Scene closestIntersection() Test" ) {
     scene.camera = std::make_shared< CameraPerspective >( 0.3 );
     
     Intersection isect_truth;
+    /* UPDATE: We can't test t<0, because raycasting asserts that valid intersections have t>=0.
+               If we wanted to test this, we would need to test that the shapes
+               return t>=0 whenever valid.
+    // Magenta means not ignoring t<0.
+    {
+        Intersection isect;
+        isect.valid = true;
+        isect.t = -1;
+        isect.position = vec3( 0,0,1 );
+        isect.normal = vec3( 0,0,-1 );
+        isect.material.color_ambient = vec3( 0,0,0 );
+        isect.material.color_diffuse = vec3( .5,0,.5 );
+        isect.material.color_specular = vec3( 0,0,0 );
+        scene.shapes.emplace_back( std::make_shared< DummyShape >( isect ) );
+    }
+    */
+    // Red means not ignoring .valid = false.
     {
         Intersection isect;
         isect.valid = false;
@@ -67,10 +84,23 @@ TEST_CASE( "Scene closestIntersection() Test" ) {
         isect.position = vec3( 0,0,-.1 );
         isect.normal = vec3( 0,0,1 );
         isect.material.color_ambient = vec3( 0,0,0 );
-        isect.material.color_diffuse = vec3( 0,.5,0 );
+        isect.material.color_diffuse = vec3( .5,0,0 );
         isect.material.color_specular = vec3( 0,0,0 );
         scene.shapes.emplace_back( std::make_shared< DummyShape >( isect ) );
     }
+    // Yellow is wrong, because it's farther than the green shape.
+    {
+        Intersection isect;
+        isect.valid = true;
+        isect.t = 3;
+        isect.position = vec3( 0,0,-3 );
+        isect.normal = vec3( 0,0,1 );
+        isect.material.color_ambient = vec3( 0,0,0 );
+        isect.material.color_diffuse = vec3( .5,.5,0 );
+        isect.material.color_specular = vec3( 0,0,0 );
+        scene.shapes.emplace_back( std::make_shared< DummyShape >( isect ) );
+    }
+    // Correct intersection is green.
     {
         Intersection isect;
         isect.valid = true;
@@ -84,17 +114,7 @@ TEST_CASE( "Scene closestIntersection() Test" ) {
         // This is the correct one.
         isect_truth = isect;
     }
-    {
-        Intersection isect;
-        isect.valid = true;
-        isect.t = 3;
-        isect.position = vec3( 0,0,-3 );
-        isect.normal = vec3( 0,0,1 );
-        isect.material.color_ambient = vec3( 0,0,0 );
-        isect.material.color_diffuse = vec3( .5,.5,0 );
-        isect.material.color_specular = vec3( 0,0,0 );
-        scene.shapes.emplace_back( std::make_shared< DummyShape >( isect ) );
-    }
+    // Blue is wrong, because it's farther than the green shape. It's the last shape in the list.
     {
         Intersection isect;
         isect.valid = true;
