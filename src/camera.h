@@ -80,13 +80,15 @@ public:
     
     void setPerspectiveParameters( real a_focal_length ) {
         assert( a_focal_length > 0. );
-        focal_length = a_focal_length;
+        d = a_focal_length;
     }
     
     ray3 getRay( const vec2& uv ) const override;
     
+    real focalLength() const { return d; }
+    
 private:
-    real focal_length;
+    real d;
 };
 
 class CameraOrthographic : public Camera {
