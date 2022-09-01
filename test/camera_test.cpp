@@ -22,8 +22,8 @@ TEST_CASE( "Camera Perspective Test" ) {
     
     const vec3 p_true( 0, 2, 4 );
     const vec3 d_true( 0.3, -0.491935, -0.0894427 );
-    std::cout << "Correct ray.p: " << ray.p << '\n';
-    std::cout << "Correct ray.d: " << ray.d << '\n';
+    std::cout << "Correct ray.p: " << p_true << '\n';
+    std::cout << "Correct ray.d: " << d_true << '\n';
     
     // The ray originates from the eye.
     CHECK( length( ray.p - cam.eye() ) < eps );
@@ -46,8 +46,8 @@ TEST_CASE( "Camera Orthographic Test" ) {
     
     const vec3 p_true( 2.90006, 1.19272, -1.94644 );
     const vec3 d_true( -0.801784, -0.267261, -0.534522 );
-    std::cout << "Correct ray.p: " << ray.p << '\n';
-    std::cout << "Correct ray.d: " << ray.d << '\n';
+    std::cout << "Correct ray.p: " << p_true << '\n';
+    std::cout << "Correct ray.d: " << d_true << '\n';
     
     // The ray originates from the film plane point.
     CHECK( length( ray.p - p_true ) < eps );
