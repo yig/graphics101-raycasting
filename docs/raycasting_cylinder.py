@@ -10,14 +10,15 @@ def intersect_cylinder( p, d ):
     
     ## The list of all intersections.
     best_t = infinity
+    n = None
     
     ## z = 0 plane: F( x,y,z ) = -z
     t = -p.z / d.z
     if t >= 0 and t < best_t:
         q = p + t * d
         if q.x^2 + q.y^2 < 1:
-            n = ( 0, 0, -1 )
-            best_t = t
+                best_t = t
+                n = ( 0, 0, -1 )
     
     
     ## z = 1 plane: F( x,y,z ) = z - 1
@@ -25,8 +26,8 @@ def intersect_cylinder( p, d ):
     if t >= 0 and t < best_t:
         q = p + t * d
         if q.x^2 + q.y^2 < 1:
-            n = ( 0, 0, -1 )
             best_t = t
+            n = ( 0, 0, 1 )
     
     
     ## sides of the cylinder: F( x,y,z ) = x^2 + y^2 - 1
@@ -42,13 +43,15 @@ def intersect_cylinder( p, d ):
         t = ( -b + sqrt( radical ) )/( 2*a )
         if t >= 0 and t < best_t:
             q = p + t * d
-            n = ( 2*q.x, 2*q.y, 0 )
-            if 0 < q.z < 1: best_t = t
+            if 0 < q.z < 1:
+                best_t = t
+                n = ( 2*q.x, 2*q.y, 0 )
         
         t = ( -b - sqrt( radical ) )/( 2*a )
         if t >= 0 and t < best_t:
             q = p + t * d
-            n = ( 2*q.x, 2*q.y, 0 )
-            if 0 < q.z < 1: best_t = t
+            if 0 < q.z < 1:
+                best_t = t
+                n = ( 2*q.x, 2*q.y, 0 )
     
-    return best_t
+    return best_t, n
