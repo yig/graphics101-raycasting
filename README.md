@@ -79,7 +79,7 @@ directory" to the `examples` subdirectory, or else copy
 * Build and run and test that it is working correctly. Qt Creator has a
 great debugger interface.
 
-* Check your work with the command line tests by running `ctest --verbose`. This will test whether your Camera and Scene classes are working correctly. If your Camera and Scene classes are not working correctly, nothing will render correctly for the autograder.
+* Check your work with the command line tests by running `ctest --verbose` (or `ctest --verbose -C Debug` if that doesn't work). This will test whether your `Camera` and `Scene` classes are working correctly. If your `Camera` and `Scene` classes are not working correctly, nothing will render correctly for the autograder.
 
 * Check your work with the [autograder](https://github.com/yig/graphics101-raycasting-autograder).
 
