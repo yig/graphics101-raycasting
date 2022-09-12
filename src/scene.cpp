@@ -15,6 +15,8 @@ void Scene::render( Image& into_image ) {
     // 1. Use camera->getPixelUV() and camera->getRay() to create a ray3.
     // 2. Call rayColor() to get a vec3 color for that ray.
     // 3. Use into_image.pixel() to set the pixel color.
+    //    Don't forget that ColorRGBA8 values range from [0,255],
+    //    whereas rayColor() returns a vec3 with values ranging from [0,1].
 
 }
 
