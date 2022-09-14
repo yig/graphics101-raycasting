@@ -10,6 +10,7 @@ add_custom_target(zip COMMAND
     "CMakeLists.txt"
     "CMakeLists-zip.txt"
     "${OUTPUT}"
+    "include"
     "test"
     WORKING_DIRECTORY "${PROJECT_SOURCE_DIR}"
     VERBATIM
@@ -31,6 +32,10 @@ install(FILES
 )
 # No trailing slash after the directory name stores the directory not its contents.
 install(DIRECTORY "${OUTPUT}"
+    DESTINATION .
+    PATTERN ".DS_Store" EXCLUDE
+)
+install(DIRECTORY "include"
     DESTINATION .
     PATTERN ".DS_Store" EXCLUDE
 )
