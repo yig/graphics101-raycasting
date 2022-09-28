@@ -61,7 +61,7 @@ like:
 
         Usage: raycasting path/to/scene.json image_out.png long_edge_pixels
 
-* If you are using an IDE like Qt Creator, you will need to set the command line arguments used when running your program. In Qt Creator, click on
+* If you are using an IDE like Qt Creator or Visual Studio or Xcode, you will need to set the command line arguments used when running your program. In Qt Creator, click on
 "Projects" and then, under "Build & Run", click on "Run." Set the
 "Command line arguments" appropriately. For example:
 
@@ -76,8 +76,7 @@ directory" to the `examples` subdirectory, or else copy
 
 * Add your code to `camera.cpp`, `scene.cpp`, and `shape.cpp`.
 
-* Build and run and test that it is working correctly. Qt Creator has a
-great debugger interface.
+* Build and run and test that it is working correctly. Qt Creator, Visual Studio, and Xcode all have great debugger interfaces.
 
 * Check your work with the command line tests by running `ctest --verbose` (or `ctest --verbose -C Debug` if that doesn't work). This will test whether your `Camera` and `Scene` classes are working correctly. If your `Camera` and `Scene` classes are not working correctly, nothing will render correctly for the autograder.
 
