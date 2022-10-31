@@ -189,7 +189,7 @@ You handle this as a collection of two shapes with conditions:
         * if -1 ≤ x,y ≤ 1: F(x,y,z) = z-1
         * if -1 ≤ x,y ≤ 1: F(x,y,z) = -(z+1)
 
-    * **(bonus 25 points)** Mesh (arbitrary triangle meshes)
+    * **(bonus 10 points)** Mesh (arbitrary triangle meshes)
 
         * Intersect with all triangles of the mesh. None of the demo scene files use this, so you’ll have to create your own.
         The `Mesh` class stores a triangle mesh. A triangle has three corners. At each corner there is a position and possibly also a normal and texture coordinate. So there are three corresponding arrays, `face_positions`, `face_normals`, and `face_texcoords`. (If the mesh has normals or texture coordinates, then `face_normals` or `face_texcoords` will be the same length as `face_positions`. If it doesn't, their length will be 0.) Each element in these arrays stores three integer indices, one for each corner of the triangle. The indices tell you where to look in the `positions`, `normals`, and `texcoords` arrays for the 3D position, 3D normal, and 2D texture coordinates at that corner. Putting this all together, you can access the 3D positions for the three corners of the `i`-th triangle like this:
