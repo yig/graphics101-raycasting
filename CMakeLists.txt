@@ -29,10 +29,13 @@ include(FetchContent)
 set(FETCHCONTENT_QUIET FALSE)
 FetchContent_Declare(
     glm
-    GIT_REPOSITORY https://github.com/g-truc/glm.git
-    GIT_TAG 0.9.9.8
-    GIT_SHALLOW TRUE
-    GIT_PROGRESS TRUE
+    URL https://github.com/g-truc/glm/archive/refs/tags/0.9.9.8.zip
+    URL_HASH MD5=a421a37d1896ab74765c3f94431ca0f6
+    DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+#    GIT_REPOSITORY https://github.com/g-truc/glm.git
+#    GIT_TAG 0.9.9.8
+#    GIT_SHALLOW TRUE
+#    GIT_PROGRESS TRUE
     )
 FetchContent_MakeAvailable( glm )
 # CPMAddPackage("https://github.com/g-truc/glm.git#0.9.9.8")
