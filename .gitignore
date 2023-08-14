@@ -7,6 +7,7 @@ Thumbs.db
 /build
 /Release
 /Debug
+/.vs
 
 # Qt Creator creates this
 CMakeLists.txt.user
